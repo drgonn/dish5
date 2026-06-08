@@ -30,26 +30,46 @@ class RecommendService:
         self.db = db
         self.user_id = user_id
 
-    async def generate_daily_menu(self, target_date: date):
-        """生成每日推荐，使用用户偏好配置"""
-        # 读取偏好
+    async def generate_daily_menu(
+        self, target_date: date,
+        meat_count: int = None, vegetable_count: int = None, soup_count: int = None,
+        must_include_ingredients: list = None,
+    ):
+        """生成每日推荐，使用用户偏好配置。
+        若指定 must_include_ingredients，则只推荐主料包含这些食材的菜品。
+        """
+        # 读取偏好（未传入则用偏好）
         pref = await crud_preference.get_or_create(self.db, self.user_id)
-        meat_count = pref.meat_count
-        vegetable_count = pref.vegetable_count
-        soup_count = pref.soup_count
+        meat_count = meat_count if meat_count is not None else pref.meat_count
+        vegetable_count = vegetable_count if vegetable_count is not None else pref.vegetable_count
+        soup_count = soup_count if soup_count is not None else pref.soup_count
 
         month = target_date.month
 
         # 获取各类应季菜品
-        hard_limit = max(meat_count + 2, 3)
-        veg_limit = max(vegetable_count + 2, 4)
-        soup_limit = max(soup_count + 1, 2)
+        hard_limit = max(meat_count + 5, 10)
+        veg_limit = max(vegetable_count + 5, 10)
+        soup_limit = max(soup_count + 3, 5)
 
         hard_dishes = await crud_dish.get_by_dtype(self.db, "硬菜", month, limit=hard_limit)
         veg_dishes = await crud_dish.get_by_dtype(self.db, "素菜", month, limit=veg_limit)
         meat_soup = await crud_dish.get_by_dtype(self.db, "肉汤", month, limit=soup_limit)
         veg_soup = await crud_dish.get_by_dtype(self.db, "素汤", month, limit=soup_limit)
         soup_dishes = meat_soup + veg_soup
+
+        # 如果指定了冰箱食材，过滤只保留主料匹配的
+        if must_include_ingredients:
+            ing_set = set(must_include_ingredients)
+
+            def contains_any(dish):
+                for ing in (dish.main_ingredients or []):
+                    if ing.get("name", "").strip() in ing_set:
+                        return True
+                return False
+
+            hard_dishes = [d for d in hard_dishes if contains_any(d)]
+            veg_dishes = [d for d in veg_dishes if contains_any(d)]
+            soup_dishes = [d for d in soup_dishes if contains_any(d)]
 
         # 选择菜品
         recommended = []
@@ -118,13 +138,14 @@ class RecommendService:
     # ——— 购物清单 ———
 
     def _generate_shopping_list(self, dishes: List[Dish]) -> List[Dict[str, Any]]:
+        """生成分类购物清单：主材 > 辅料 > 佐料"""
         ingredients_map: Dict[str, Dict[str, Any]] = {}
 
         for dish in dishes:
-            for ing_list in [
-                dish.main_ingredients or [],
-                dish.side_ingredients or [],
-                dish.seasonings or [],
+            for ing_list, ing_type in [
+                (dish.main_ingredients or [], "main"),
+                (dish.side_ingredients or [], "side"),
+                (dish.seasonings or [], "seasoning"),
             ]:
                 for ing in ing_list:
                     name = ing.get("name", "").strip()
@@ -134,10 +155,20 @@ class RecommendService:
                         ingredients_map[name] = {
                             "name": name,
                             "amount": ing.get("amount", ""),
+                            "type": ing_type,
                             "bought": False,
                         }
+                    else:
+                        # 同名食材：升级类型（主材优先级最高）
+                        priority = {"main": 3, "side": 2, "seasoning": 1}
+                        if priority.get(ing_type, 0) > priority.get(ingredients_map[name]["type"], 0):
+                            ingredients_map[name]["type"] = ing_type
 
-        return list(ingredients_map.values())
+        result = list(ingredients_map.values())
+        # 排序：主材 → 辅料 → 佐料
+        type_order = {"main": 0, "side": 1, "seasoning": 2}
+        result.sort(key=lambda x: type_order.get(x["type"], 9))
+        return result
 
     # ——— 5 级备菜编排 ———
 

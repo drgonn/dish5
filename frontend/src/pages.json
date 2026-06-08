@@ -1,0 +1,76 @@
+{
+  "pages": [
+    {
+      "path": "pages/index",
+      "style": {
+        "navigationBarTitleText": "今日推荐",
+        "navigationBarBackgroundColor": "#FF6B35"
+      }
+    },
+    {
+      "path": "pages/daily/history",
+      "style": { "navigationBarTitleText": "推荐历史" }
+    },
+    {
+      "path": "pages/recipe/list",
+      "style": { "navigationBarTitleText": "菜谱大全" }
+    },
+    {
+      "path": "pages/recipe/detail",
+      "style": { "navigationBarTitleText": "菜谱详情" }
+    },
+    {
+      "path": "pages/shopping/index",
+      "style": { "navigationBarTitleText": "买菜清单" }
+    },
+    {
+      "path": "pages/prep/index",
+      "style": { "navigationBarTitleText": "备菜清单" }
+    },
+    {
+      "path": "pages/fridge/index",
+      "style": { "navigationBarTitleText": "冰箱图鉴" }
+    },
+    {
+      "path": "pages/settings/index",
+      "style": { "navigationBarTitleText": "推荐设置" }
+    }
+  ],
+  "globalStyle": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "dish5",
+    "navigationBarBackgroundColor": "#FFFFFF",
+    "backgroundColor": "#F5F5F5"
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#FF6B35",
+    "backgroundColor": "#FFFFFF",
+    "list": [
+      {
+        "pagePath": "pages/index",
+        "text": "推荐",
+        "iconPath": "static/tab-home.png",
+        "selectedIconPath": "static/tab-home-active.png"
+      },
+      {
+        "pagePath": "pages/recipe/list",
+        "text": "菜谱",
+        "iconPath": "static/tab-recipe.png",
+        "selectedIconPath": "static/tab-recipe-active.png"
+      },
+      {
+        "pagePath": "pages/fridge/index",
+        "text": "冰箱",
+        "iconPath": "static/tab-fridge.png",
+        "selectedIconPath": "static/tab-fridge-active.png"
+      },
+      {
+        "pagePath": "pages/settings/index",
+        "text": "设置",
+        "iconPath": "static/tab-settings.png",
+        "selectedIconPath": "static/tab-settings-active.png"
+      }
+    ]
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "name": "dish5 菜谱推荐",
+  "appid": "__UNI__dish5",
+  "description": "智能每日菜谱推荐系统",
+  "versionName": "1.0.0",
+  "versionCode": "100",
+  "transformPx": false,
+  "uniStatistics": { "enable": false },
+  "app-plus": {
+    "usingComponents": true,
+    "nvueStyleCompiler": "uni-app",
+    "compilerVersion": 3,
+    "splashscreen": { "alwaysShowBeforeRender": true, "waiting": true, "autoclose": true, "delay": 0 },
+    "modules": {},
+    "distribute": { "android": { "permissions": [] }, "ios": {}, "sdkConfigs": {} }
+  },
+  "h5": {
+    "title": "dish5 菜谱推荐",
+    "router": { "mode": "hash" }
+  },
+  "mp-weixin": {
+    "appid": "wxeda5d41494dd148a",
+    "setting": { "urlCheck": false },
+    "usingComponents": true
+  },
+  "vueVersion": "3"
+}

@@ -32,6 +32,22 @@ status: ## 查看服务运行状态
 	docker-compose ps
 
 # ============================================================
+# 前端
+# ============================================================
+
+fe-install: ## 安装前端依赖
+	cd frontend && npm install --legacy-peer-deps
+
+fe-dev: ## 启动前端 H5 开发服务器
+	cd frontend && npm run dev
+
+fe-build: ## 构建前端 H5 版本
+	cd frontend && npm run build
+
+fe-build-mp: ## 构建微信小程序版本
+	cd frontend && npm run build:mp-weixin
+
+# ============================================================
 # 数据库
 # ============================================================
 

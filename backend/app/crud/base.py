@@ -40,10 +40,12 @@ class BaseCRUD:
 
         # 应用筛选条件
         if filters:
+            from sqlalchemy import Enum as SQLEnum
             for field, value in filters.items():
                 if value is not None and hasattr(self.model, field):
                     col = getattr(self.model, field)
-                    if isinstance(value, str):
+                    # Enum 列用精确匹配，普通字符串用 LIKE
+                    if isinstance(value, str) and not isinstance(col.type, SQLEnum):
                         base_query = base_query.where(col.like(f"%{value}%"))
                         count_query = count_query.where(col.like(f"%{value}%"))
                     else:

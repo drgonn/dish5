@@ -1,16 +1,13 @@
 # 数据库连接配置 — dish5
 # 异步 PostgreSQL，配合 Alembic 迁移
-import logging
 from sqlalchemy.ext.asyncio import AsyncSession, create_async_engine, async_sessionmaker
 from sqlalchemy.orm import DeclarativeBase
 
 from .config import settings
 
-logger = logging.getLogger("dish5.database")
-
 engine = create_async_engine(
     settings.DATABASE_URL,
-    echo=settings.DEBUG,
+    echo=False,
     pool_pre_ping=True,
     pool_size=5,
     max_overflow=10,
@@ -45,6 +42,11 @@ async def get_db() -> AsyncSession:
 
 async def run_migrations_or_init():
     """启动时运行 Alembic 迁移，失败则回退到 create_all"""
+    # 保存 logging 状态，alembic command.upgrade() 会覆盖它
+    import logging
+    root_handlers = logging.root.handlers.copy()
+    root_level = logging.root.level
+
     try:
         from alembic.config import Config
         from alembic import command
@@ -53,12 +55,13 @@ async def run_migrations_or_init():
         alembic_cfg = Config(
             os.path.join(os.path.dirname(__file__), "..", "..", "alembic.ini")
         )
-        # 覆盖 URL，确保用异步驱动
         alembic_cfg.set_main_option("sqlalchemy.url", settings.DATABASE_URL)
         command.upgrade(alembic_cfg, "head")
-        logger.info("Alembic 迁移完成")
     except Exception as e:
-        logger.warning(f"Alembic 迁移失败 ({e})，回退到 create_all")
+        print(f"[dish5] Alembic 迁移失败 ({e})，回退到 create_all", flush=True)
         async with engine.begin() as conn:
             await conn.run_sync(Base.metadata.create_all)
-        logger.info("create_all 完成（回退模式）")
+    finally:
+        # 恢复 logging 状态，alembic 把它搞坏了
+        logging.root.handlers = root_handlers
+        logging.root.level = root_level
