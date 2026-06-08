@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block title %}推荐管理 - dish5{% endblock %}
+{% block content %}
+<h1 class="mb-4">📅 推荐管理</h1>
+
+<div class="mb-3">
+    <button class="btn btn-warning" onclick="generateToday()">⚡ 手动生成今日推荐</button>
+</div>
+
+<table class="table table-striped">
+    <thead>
+        <tr><th>日期</th><th>推荐菜品</th><th>通知状态</th><th>创建时间</th></tr>
+    </thead>
+    <tbody id="dailyTableBody">
+        <tr><td colspan="4" class="text-center">加载中...</td></tr>
+    </tbody>
+</table>
+{% endblock %}
+
+{% block scripts %}
+<script>
+async function generateToday() {
+    try {
+        await axios.post('/api/v1/daily/generate');
+        alert('生成成功');
+        loadHistory();
+    } catch (e) {
+        alert('生成失败: ' + (e.response?.data?.detail || e.message));
+    }
+}
+
+async function loadHistory() {
+    try {
+        const resp = await axios.get('/api/v1/daily/history/list?page=1&page_size=30');
+        const data = resp.data;
+        const tbody = document.getElementById('dailyTableBody');
+        if (!data.data?.length) {
+            tbody.innerHTML = '<tr><td colspan="4" class="text-center">暂无推荐记录</td></tr>';
+            return;
+        }
+        tbody.innerHTML = data.data.map(d => `
+            <tr>
+                <td>${d.date}</td>
+                <td>${(d.recipes || []).map(r => r.name).join('、')}</td>
+                <td>${d.notified ? '✅ 已推送' : '⏳ 未推送'}</td>
+                <td>${new Date(d.created_at).toLocaleString()}</td>
+            </tr>
+        `).join('');
+    } catch (e) {
+        console.error(e);
+    }
+}
+
+loadHistory();
+</script>
+{% endblock %}

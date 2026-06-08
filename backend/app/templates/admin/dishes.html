@@ -1,0 +1,227 @@
+{% extends "base.html" %}
+{% block title %}菜品管理 - dish5{% endblock %}
+{% block content %}
+<h1 class="mb-4">📋 菜品管理</h1>
+
+<div class="mb-3 row g-2">
+    <div class="col-md-4">
+        <input class="form-control" id="searchInput" placeholder="搜索菜名...">
+    </div>
+    <div class="col-md-2">
+        <button class="btn btn-primary" onclick="loadDishes()">搜索</button>
+    </div>
+    <div class="col-md-2 ms-auto">
+        <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#editModal" onclick="clearForm()">+ 新增菜品</button>
+    </div>
+</div>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>菜名</th>
+            <th>类型</th>
+            <th>主材</th>
+            <th>应季</th>
+            <th>次数</th>
+            <th>操作</th>
+        </tr>
+    </thead>
+    <tbody id="dishTableBody">
+        <tr><td colspan="7" class="text-center">加载中...</td></tr>
+    </tbody>
+</table>
+
+<nav>
+    <ul class="pagination" id="pagination"></ul>
+</nav>
+
+<!-- Edit Modal -->
+<div class="modal fade" id="editModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editModalTitle">新增菜品</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <form id="dishForm">
+                    <input type="hidden" id="dishId">
+                    <div class="row g-2">
+                        <div class="col-md-6 mb-2">
+                            <label class="form-label">菜名</label>
+                            <input class="form-control" id="formName" required>
+                        </div>
+                        <div class="col-md-3 mb-2">
+                            <label class="form-label">荤素类型</label>
+                            <select class="form-select" id="formDtype">
+                                <option value="硬菜">硬菜</option>
+                                <option value="肉汤">肉汤</option>
+                                <option value="素汤">素汤</option>
+                                <option value="素菜">素菜</option>
+                                <option value="半素">半素</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3 mb-2">
+                            <label class="form-label">主材类型</label>
+                            <select class="form-select" id="formFtype">
+                                <option value="跑">跑(猪牛羊)</option>
+                                <option value="飞">飞(鸡鸭鹅)</option>
+                                <option value="游">游(鱼虾)</option>
+                                <option value="草">草(素菜)</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3 mb-2">
+                            <label class="form-label">开始月</label>
+                            <input type="number" class="form-control" id="formStartMonth" min="1" max="12" value="1">
+                        </div>
+                        <div class="col-md-3 mb-2">
+                            <label class="form-label">结束月</label>
+                            <input type="number" class="form-control" id="formEndMonth" min="1" max="12" value="12">
+                        </div>
+                        <div class="col-md-3 mb-2">
+                            <label class="form-label">烹饪时间(分钟)</label>
+                            <input type="number" class="form-control" id="formCookingTime" value="30">
+                        </div>
+                        <div class="col-md-3 mb-2">
+                            <label class="form-label">难度</label>
+                            <select class="form-select" id="formDifficulty">
+                                <option value="简单">简单</option>
+                                <option value="中等" selected>中等</option>
+                                <option value="困难">困难</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!-- JSON fields as textarea for simplicity -->
+                    <div class="mb-2">
+                        <label class="form-label">主料 (JSON)</label>
+                        <textarea class="form-control" id="formMainIngredients" rows="3">[]</textarea>
+                    </div>
+                    <div class="mb-2">
+                        <label class="form-label">辅料 (JSON)</label>
+                        <textarea class="form-control" id="formSideIngredients" rows="3">[]</textarea>
+                    </div>
+                    <div class="mb-2">
+                        <label class="form-label">调料 (JSON)</label>
+                        <textarea class="form-control" id="formSeasonings" rows="3">[]</textarea>
+                    </div>
+                    <div class="mb-2">
+                        <label class="form-label">烹饪步骤 (JSON)</label>
+                        <textarea class="form-control" id="formCookingSteps" rows="3">[]</textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">保存</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+let currentPage = 1;
+const API = '/api/v1/dishes';
+
+function clearForm() {
+    document.getElementById('editModalTitle').textContent = '新增菜品';
+    document.getElementById('dishId').value = '';
+    document.getElementById('dishForm').reset();
+}
+
+async function editDish(data) {
+    document.getElementById('editModalTitle').textContent = '编辑菜品';
+    document.getElementById('dishId').value = data.id;
+    document.getElementById('formName').value = data.name || '';
+    document.getElementById('formDtype').value = data.dtype || '硬菜';
+    document.getElementById('formFtype').value = data.ftype || '跑';
+    document.getElementById('formStartMonth').value = data.start_month || 1;
+    document.getElementById('formEndMonth').value = data.end_month || 12;
+    document.getElementById('formCookingTime').value = data.cooking_time || 30;
+    document.getElementById('formDifficulty').value = data.difficulty || '中等';
+    document.getElementById('formMainIngredients').value = JSON.stringify(data.main_ingredients || [], null, 2);
+    document.getElementById('formSideIngredients').value = JSON.stringify(data.side_ingredients || [], null, 2);
+    document.getElementById('formSeasonings').value = JSON.stringify(data.seasonings || [], null, 2);
+    document.getElementById('formCookingSteps').value = JSON.stringify(data.cooking_steps || [], null, 2);
+    new bootstrap.Modal(document.getElementById('editModal')).show();
+}
+
+document.getElementById('dishForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const id = document.getElementById('dishId').value;
+    const data = {
+        name: document.getElementById('formName').value,
+        dtype: document.getElementById('formDtype').value,
+        ftype: document.getElementById('formFtype').value,
+        start_month: parseInt(document.getElementById('formStartMonth').value),
+        end_month: parseInt(document.getElementById('formEndMonth').value),
+        cooking_time: parseInt(document.getElementById('formCookingTime').value),
+        difficulty: document.getElementById('formDifficulty').value,
+        main_ingredients: JSON.parse(document.getElementById('formMainIngredients').value || '[]'),
+        side_ingredients: JSON.parse(document.getElementById('formSideIngredients').value || '[]'),
+        seasonings: JSON.parse(document.getElementById('formSeasonings').value || '[]'),
+        cooking_steps: JSON.parse(document.getElementById('formCookingSteps').value || '[]'),
+    };
+    try {
+        if (id) {
+            await axios.patch(`${API}/${id}`, data);
+        } else {
+            await axios.post(API, data);
+        }
+        bootstrap.Modal.getInstance(document.getElementById('editModal')).hide();
+        loadDishes();
+    } catch (err) {
+        alert('保存失败: ' + (err.response?.data?.detail || err.message));
+    }
+});
+
+async function deleteDish(id) {
+    if (!confirm('确定删除菜品 #' + id + '?')) return;
+    try {
+        await axios.delete(`${API}/${id}`);
+        loadDishes();
+    } catch (err) {
+        alert('删除失败: ' + (err.response?.data?.detail || err.message));
+    }
+}
+
+async function loadDishes() {
+    const keyword = document.getElementById('searchInput').value;
+    const params = { current: currentPage, pageSize: 10 };
+    if (keyword) params.name = keyword;
+    try {
+        const resp = await axios.get(API, { params });
+        const data = resp.data;
+        const tbody = document.getElementById('dishTableBody');
+        if (!data.data?.length) {
+            tbody.innerHTML = '<tr><td colspan="7" class="text-center">暂无数据</td></tr>';
+            return;
+        }
+        tbody.innerHTML = data.data.map(d => `
+            <tr>
+                <td>${d.id}</td>
+                <td>${d.name}</td>
+                <td><span class="badge bg-secondary">${d.dtype}</span></td>
+                <td>${d.ftype}</td>
+                <td>${d.start_month}-${d.end_month}月</td>
+                <td>${d.eats}</td>
+                <td>
+                    <button class="btn btn-sm btn-outline-primary" onclick='editDish(${JSON.stringify(d)})'>编辑</button>
+                    <button class="btn btn-sm btn-outline-danger" onclick="deleteDish(${d.id})">删除</button>
+                </td>
+            </tr>
+        `).join('');
+        // Pagination
+        const totalPages = Math.ceil(data.total / data.pageSize);
+        document.getElementById('pagination').innerHTML = Array.from({length: totalPages}, (_, i) => `
+            <li class="page-item ${i+1 === currentPage ? 'active' : ''}">
+                <a class="page-link" href="#" onclick="currentPage=${i+1};loadDishes()">${i+1}</a>
+            </li>
+        `).join('');
+    } catch (e) {
+        console.error(e);
+    }
+}
+
+loadDishes();
+</script>
+{% endblock %}

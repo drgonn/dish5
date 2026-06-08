@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% block title %}仪表板 - dish5{% endblock %}
+{% block content %}
+<h1 class="mb-4">📊 仪表板</h1>
+
+<div class="row g-3">
+    <div class="col-md-4">
+        <div class="card text-white bg-primary">
+            <div class="card-body">
+                <h5 class="card-title">今日推荐</h5>
+                <p class="card-text fs-3" id="todayStatus">加载中...</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card text-white bg-success">
+            <div class="card-body">
+                <h5 class="card-title">菜品总数</h5>
+                <p class="card-text fs-3" id="dishCount">-</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card text-white bg-info">
+            <div class="card-body">
+                <h5 class="card-title">推荐历史</h5>
+                <p class="card-text fs-3" id="historyCount">-</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="mt-4">
+    <button class="btn btn-warning btn-lg" onclick="generateToday()">⚡ 手动生成今日推荐</button>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+async function loadStats() {
+    try {
+        const todayResp = await axios.get('/api/v1/daily/today');
+        const today = todayResp.data;
+        document.getElementById('todayStatus').textContent = today.data ? '已生成 ✅' : '未生成 ❌';
+
+        const dishesResp = await axios.get('/api/v1/dishes?current=1&pageSize=1');
+        document.getElementById('dishCount').textContent = dishesResp.data.total;
+
+        const historyResp = await axios.get('/api/v1/daily/history/list?page=1&page_size=1');
+        document.getElementById('historyCount').textContent = historyResp.data.total;
+    } catch (e) {
+        console.error(e);
+    }
+}
+
+async function generateToday() {
+    try {
+        await axios.post('/api/v1/daily/generate');
+        alert('推荐生成成功！');
+        loadStats();
+    } catch (e) {
+        alert('生成失败: ' + (e.response?.data?.detail || e.message));
+    }
+}
+
+loadStats();
+</script>
+{% endblock %}
