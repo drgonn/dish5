@@ -67,3 +67,7 @@ cloudfunctions/*/.fun/
 *.tmp
 *.temp
 .cache/
+__pycache__/
+*.pyc
+backend/app/static/
+.env
