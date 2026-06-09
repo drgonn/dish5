@@ -23,7 +23,10 @@ class Settings(BaseSettings):
     def DATABASE_URL(self) -> str:
         if os.environ.get("DATABASE_URL"):
             url = os.environ["DATABASE_URL"]
-            return url.replace("postgresql://", "postgresql+asyncpg://").replace("postgres://", "postgresql+asyncpg://")
+            url = url.replace("postgresql://", "postgresql+asyncpg://").replace("postgres://", "postgresql+asyncpg://")
+            # 移除 psycopg2 专有参数，asyncpg 不兼容
+            url = url.replace("?sslmode=require", "").replace("&sslmode=require", "")
+            return url
         return (
             f"postgresql+asyncpg://{self.PG_USER}:{self.PG_PASSWORD}"
             f"@{self.PG_HOST}:{self.PG_PORT}/{self.PG_DATABASE}"
