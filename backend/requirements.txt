@@ -23,3 +23,4 @@ httpx>=0.26.0
 
 # 数据库迁移
 alembic>=1.13.0
+psycopg2-binary

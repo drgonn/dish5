@@ -1,22 +1,13 @@
-# dish5 — 多阶段构建
-# Stage 1: 构建前端
-FROM node:20-alpine AS frontend
-WORKDIR /frontend
-COPY frontend/package.json frontend/package-lock.json* ./
-RUN npm install --legacy-peer-deps
-COPY frontend/ ./
-RUN npm run build
-
-# Stage 2: 后端 + 前端静态文件
 FROM python:3.12-slim
+
 WORKDIR /home/dron/projects/dish/dish5/backend
 
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY app/ ./app/
-COPY alembic.ini alembic/
-COPY --from=frontend /frontend/dist/build/h5/ ./app/static/
+COPY alembic.ini ./
+COPY alembic/ ./alembic/
 
 EXPOSE 8000
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD alembic upgrade head && uvicorn app.main:app --host 0.0.0.0 --port 8000

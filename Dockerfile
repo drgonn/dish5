@@ -19,4 +19,4 @@ COPY backend/alembic.ini backend/alembic/ ./
 COPY --from=frontend /frontend/dist/build/h5/ ./app/static/
 
 EXPOSE 8000
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD alembic upgrade head && uvicorn app.main:app --host 0.0.0.0 --port 8000

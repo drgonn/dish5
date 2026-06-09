@@ -7,7 +7,6 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
 
 from .core.config import settings
-from .core.database import run_migrations_or_init
 from .api.v1.router import api_router
 from .tasks import start_scheduler, stop_scheduler
 
@@ -21,8 +20,6 @@ logger.propagate = False
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     logger.info("dish5 启动中...")
-    await run_migrations_or_init()
-    logger.info("数据库迁移完成")
     start_scheduler()
     logger.info("定时任务已启动")
     yield
