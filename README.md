@@ -281,3 +281,8 @@ cd app && uvicorn main:app --reload --port 8010
 | dish4 | `templates/admin/` | Jinja2 管理后台模板 |
 | dish4 | `crud/` | CRUD 类模式 |
 | dish3 | `alembic/` | 迁移框架 (后续配置) |
+
+
+
+
+DATABASE_URL="postgresql://neondb_owner:npg_SmX8AH6wgTcD@ep-rapid-violet-aog3orx2.c-2.ap-southeast-1.aws.neon.tech/neondb?sslmode=require" python3 backend/seed_dishes.py

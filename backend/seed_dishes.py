@@ -17,6 +17,7 @@ DISHES = json.loads(r'''[
     "end_month": 12,
     "cooking_time": 60,
     "difficulty": "中等",
+    "health_score": 25,
     "main_ingredients": [
       {
         "name": "五花肉",
@@ -115,12 +116,12 @@ DISHES = json.loads(r'''[
     "prep_steps": [
       {
         "act": "洗",
+        "note": "洗净沥干",
         "items": [
           {
             "name": "五花肉"
           }
-        ],
-        "note": "洗净沥干"
+        ]
       },
       {
         "act": "切",
@@ -149,6 +150,7 @@ DISHES = json.loads(r'''[
     "end_month": 12,
     "cooking_time": 45,
     "difficulty": "中等",
+    "health_score": 35,
     "main_ingredients": [
       {
         "name": "排骨",
@@ -232,12 +234,12 @@ DISHES = json.loads(r'''[
     "prep_steps": [
       {
         "act": "洗",
+        "note": "冷水浸泡20分钟去血水",
         "items": [
           {
             "name": "排骨"
           }
-        ],
-        "note": "冷水浸泡20分钟去血水"
+        ]
       },
       {
         "act": "切",
@@ -266,6 +268,7 @@ DISHES = json.loads(r'''[
     "end_month": 12,
     "cooking_time": 25,
     "difficulty": "中等",
+    "health_score": 50,
     "main_ingredients": [
       {
         "name": "五花肉",
@@ -360,6 +363,7 @@ DISHES = json.loads(r'''[
     "prep_steps": [
       {
         "act": "洗",
+        "note": "五花肉整块洗",
         "items": [
           {
             "name": "五花肉"
@@ -367,8 +371,7 @@ DISHES = json.loads(r'''[
           {
             "name": "蒜苗"
           }
-        ],
-        "note": "五花肉整块洗"
+        ]
       },
       {
         "act": "切",
@@ -401,6 +404,7 @@ DISHES = json.loads(r'''[
     "end_month": 12,
     "cooking_time": 20,
     "difficulty": "中等",
+    "health_score": 45,
     "main_ingredients": [
       {
         "name": "鸡胸肉",
@@ -507,17 +511,18 @@ DISHES = json.loads(r'''[
     "prep_steps": [
       {
         "act": "腌",
+        "note": "加料酒淀粉盐",
         "items": [
           {
             "name": "鸡胸肉",
             "amount": "300g"
           }
         ],
-        "time_minutes": 10,
-        "note": "加料酒淀粉盐"
+        "time_minutes": 10
       },
       {
         "act": "洗",
+        "note": "鸡胸去筋膜",
         "items": [
           {
             "name": "鸡胸肉"
@@ -525,8 +530,7 @@ DISHES = json.loads(r'''[
           {
             "name": "葱"
           }
-        ],
-        "note": "鸡胸去筋膜"
+        ]
       },
       {
         "act": "切",
@@ -559,6 +563,7 @@ DISHES = json.loads(r'''[
     "end_month": 12,
     "cooking_time": 20,
     "difficulty": "中等",
+    "health_score": 50,
     "main_ingredients": [
       {
         "name": "猪里脊",
@@ -669,28 +674,29 @@ DISHES = json.loads(r'''[
     "prep_steps": [
       {
         "act": "泡",
+        "note": "温水泡发",
         "items": [
           {
             "name": "木耳",
             "amount": "50g"
           }
         ],
-        "time_minutes": 120,
-        "note": "温水泡发"
+        "time_minutes": 120
       },
       {
         "act": "腌",
+        "note": "料酒淀粉盐",
         "items": [
           {
             "name": "猪里脊",
             "amount": "250g"
           }
         ],
-        "time_minutes": 10,
-        "note": "料酒淀粉盐"
+        "time_minutes": 10
       },
       {
         "act": "洗",
+        "note": "",
         "items": [
           {
             "name": "胡萝卜"
@@ -698,8 +704,7 @@ DISHES = json.loads(r'''[
           {
             "name": "青椒"
           }
-        ],
-        "note": ""
+        ]
       },
       {
         "act": "切",
@@ -744,6 +749,7 @@ DISHES = json.loads(r'''[
     "end_month": 12,
     "cooking_time": 30,
     "difficulty": "困难",
+    "health_score": 30,
     "main_ingredients": [
       {
         "name": "猪里脊",
@@ -862,17 +868,18 @@ DISHES = json.loads(r'''[
     "prep_steps": [
       {
         "act": "腌",
+        "note": "料酒淀粉盐",
         "items": [
           {
             "name": "猪里脊",
             "amount": "300g"
           }
         ],
-        "time_minutes": 15,
-        "note": "料酒淀粉盐"
+        "time_minutes": 15
       },
       {
         "act": "洗",
+        "note": "",
         "items": [
           {
             "name": "豆芽"
@@ -880,8 +887,7 @@ DISHES = json.loads(r'''[
           {
             "name": "生菜"
           }
-        ],
-        "note": ""
+        ]
       },
       {
         "act": "切",
@@ -914,6 +920,7 @@ DISHES = json.loads(r'''[
     "end_month": 12,
     "cooking_time": 25,
     "difficulty": "简单",
+    "health_score": 35,
     "main_ingredients": [
       {
         "name": "鸡中翅",
@@ -992,12 +999,12 @@ DISHES = json.loads(r'''[
     "prep_steps": [
       {
         "act": "洗",
+        "note": "洗净沥干",
         "items": [
           {
             "name": "鸡中翅"
           }
-        ],
-        "note": "洗净沥干"
+        ]
       },
       {
         "act": "切",
@@ -1026,6 +1033,7 @@ DISHES = json.loads(r'''[
     "end_month": 12,
     "cooking_time": 50,
     "difficulty": "中等",
+    "health_score": 35,
     "main_ingredients": [
       {
         "name": "排骨",
@@ -1109,12 +1117,12 @@ DISHES = json.loads(r'''[
     "prep_steps": [
       {
         "act": "洗",
+        "note": "冷水浸泡去血水",
         "items": [
           {
             "name": "排骨"
           }
-        ],
-        "note": "冷水浸泡去血水"
+        ]
       },
       {
         "act": "切",
@@ -1143,6 +1151,7 @@ DISHES = json.loads(r'''[
     "end_month": 12,
     "cooking_time": 40,
     "difficulty": "简单",
+    "health_score": 50,
     "main_ingredients": [
       {
         "name": "三黄鸡",
@@ -1234,12 +1243,12 @@ DISHES = json.loads(r'''[
     "prep_steps": [
       {
         "act": "洗",
+        "note": "洗净斩块",
         "items": [
           {
             "name": "三黄鸡"
           }
-        ],
-        "note": "洗净斩块"
+        ]
       },
       {
         "act": "切",
@@ -1272,6 +1281,7 @@ DISHES = json.loads(r'''[
     "end_month": 3,
     "cooking_time": 90,
     "difficulty": "困难",
+    "health_score": 35,
     "main_ingredients": [
       {
         "name": "牛腩",
@@ -1390,16 +1400,17 @@ DISHES = json.loads(r'''[
     "prep_steps": [
       {
         "act": "泡",
+        "note": "冷水浸泡去血水",
         "items": [
           {
             "name": "牛腩"
           }
         ],
-        "time_minutes": 30,
-        "note": "冷水浸泡去血水"
+        "time_minutes": 30
       },
       {
         "act": "洗",
+        "note": "",
         "items": [
           {
             "name": "土豆"
@@ -1407,8 +1418,7 @@ DISHES = json.loads(r'''[
           {
             "name": "胡萝卜"
           }
-        ],
-        "note": ""
+        ]
       },
       {
         "act": "切",
@@ -1449,6 +1459,7 @@ DISHES = json.loads(r'''[
     "end_month": 3,
     "cooking_time": 80,
     "difficulty": "中等",
+    "health_score": 40,
     "main_ingredients": [
       {
         "name": "牛肉",
@@ -1532,22 +1543,22 @@ DISHES = json.loads(r'''[
     "prep_steps": [
       {
         "act": "泡",
+        "note": "冷水浸泡",
         "items": [
           {
             "name": "牛肉"
           }
         ],
-        "time_minutes": 20,
-        "note": "冷水浸泡"
+        "time_minutes": 20
       },
       {
         "act": "洗",
+        "note": "",
         "items": [
           {
             "name": "土豆"
           }
-        ],
-        "note": ""
+        ]
       },
       {
         "act": "切",
@@ -1580,6 +1591,7 @@ DISHES = json.loads(r'''[
     "end_month": 12,
     "cooking_time": 25,
     "difficulty": "中等",
+    "health_score": 30,
     "main_ingredients": [
       {
         "name": "猪里脊",
@@ -1666,14 +1678,14 @@ DISHES = json.loads(r'''[
     "prep_steps": [
       {
         "act": "腌",
+        "note": "料酒盐",
         "items": [
           {
             "name": "猪里脊",
             "amount": "300g"
           }
         ],
-        "time_minutes": 10,
-        "note": "料酒盐"
+        "time_minutes": 10
       },
       {
         "act": "切",
@@ -1694,6 +1706,7 @@ DISHES = json.loads(r'''[
     "end_month": 12,
     "cooking_time": 20,
     "difficulty": "中等",
+    "health_score": 50,
     "main_ingredients": [
       {
         "name": "猪里脊",
@@ -1788,14 +1801,14 @@ DISHES = json.loads(r'''[
     "prep_steps": [
       {
         "act": "腌",
+        "note": "料酒淀粉",
         "items": [
           {
             "name": "猪里脊",
             "amount": "300g"
           }
         ],
-        "time_minutes": 10,
-        "note": "料酒淀粉"
+        "time_minutes": 10
       },
       {
         "act": "切",
@@ -1820,6 +1833,7 @@ DISHES = json.loads(r'''[
     "end_month": 12,
     "cooking_time": 35,
     "difficulty": "中等",
+    "health_score": 30,
     "main_ingredients": [
       {
         "name": "排骨",
@@ -1907,6 +1921,7 @@ DISHES = json.loads(r'''[
     "prep_steps": [
       {
         "act": "腌",
+        "note": "蒜蓉生抽料酒蚝油",
         "items": [
           {
             "name": "排骨",
@@ -1917,8 +1932,7 @@ DISHES = json.loads(r'''[
             "amount": "1整头"
           }
         ],
-        "time_minutes": 30,
-        "note": "蒜蓉生抽料酒蚝油"
+        "time_minutes": 30
       },
       {
         "act": "切",
@@ -1951,6 +1965,7 @@ DISHES = json.loads(r'''[
     "end_month": 12,
     "cooking_time": 15,
     "difficulty": "简单",
+    "health_score": 55,
     "main_ingredients": [
       {
         "name": "五花肉",
@@ -2026,12 +2041,12 @@ DISHES = json.loads(r'''[
     "prep_steps": [
       {
         "act": "洗",
+        "note": "",
         "items": [
           {
             "name": "青椒"
           }
-        ],
-        "note": ""
+        ]
       },
       {
         "act": "切",
@@ -2060,6 +2075,7 @@ DISHES = json.loads(r'''[
     "end_month": 12,
     "cooking_time": 35,
     "difficulty": "中等",
+    "health_score": 55,
     "main_ingredients": [
       {
         "name": "鸡腿",
@@ -2159,17 +2175,18 @@ DISHES = json.loads(r'''[
     "prep_steps": [
       {
         "act": "泡",
+        "note": "温水泡发",
         "items": [
           {
             "name": "干香菇",
             "amount": "6朵"
           }
         ],
-        "time_minutes": 30,
-        "note": "温水泡发"
+        "time_minutes": 30
       },
       {
         "act": "洗",
+        "note": "",
         "items": [
           {
             "name": "鸡腿"
@@ -2177,8 +2194,7 @@ DISHES = json.loads(r'''[
           {
             "name": "土豆"
           }
-        ],
-        "note": ""
+        ]
       },
       {
         "act": "切",
@@ -2215,6 +2231,7 @@ DISHES = json.loads(r'''[
     "end_month": 12,
     "cooking_time": 60,
     "difficulty": "中等",
+    "health_score": 45,
     "main_ingredients": [
       {
         "name": "鸭肉",
@@ -2314,12 +2331,12 @@ DISHES = json.loads(r'''[
     "prep_steps": [
       {
         "act": "洗",
+        "note": "洗净斩块",
         "items": [
           {
             "name": "鸭肉"
           }
-        ],
-        "note": "洗净斩块"
+        ]
       },
       {
         "act": "切",
@@ -2352,6 +2369,7 @@ DISHES = json.loads(r'''[
     "end_month": 12,
     "cooking_time": 15,
     "difficulty": "中等",
+    "health_score": 50,
     "main_ingredients": [
       {
         "name": "牛肉",
@@ -2431,14 +2449,14 @@ DISHES = json.loads(r'''[
     "prep_steps": [
       {
         "act": "腌",
+        "note": "料酒生抽淀粉",
         "items": [
           {
             "name": "牛肉",
             "amount": "300g"
           }
         ],
-        "time_minutes": 10,
-        "note": "料酒生抽淀粉"
+        "time_minutes": 10
       },
       {
         "act": "切",
@@ -2467,6 +2485,7 @@ DISHES = json.loads(r'''[
     "end_month": 3,
     "cooking_time": 10,
     "difficulty": "简单",
+    "health_score": 50,
     "main_ingredients": [
       {
         "name": "羊肉片",
@@ -2546,14 +2565,14 @@ DISHES = json.loads(r'''[
     "prep_steps": [
       {
         "act": "腌",
+        "note": "料酒白胡椒粉",
         "items": [
           {
             "name": "羊肉片",
             "amount": "300g"
           }
         ],
-        "time_minutes": 5,
-        "note": "料酒白胡椒粉"
+        "time_minutes": 5
       },
       {
         "act": "切",
@@ -2582,6 +2601,7 @@ DISHES = json.loads(r'''[
     "end_month": 9,
     "cooking_time": 15,
     "difficulty": "中等",
+    "health_score": 55,
     "main_ingredients": [
       {
         "name": "豆角",
@@ -2653,12 +2673,12 @@ DISHES = json.loads(r'''[
     "prep_steps": [
       {
         "act": "洗",
+        "note": "去筋洗净沥干",
         "items": [
           {
             "name": "豆角"
           }
-        ],
-        "note": "去筋洗净沥干"
+        ]
       },
       {
         "act": "切",
@@ -2687,6 +2707,7 @@ DISHES = json.loads(r'''[
     "end_month": 12,
     "cooking_time": 25,
     "difficulty": "困难",
+    "health_score": 30,
     "main_ingredients": [
       {
         "name": "鸡腿肉",
@@ -2797,14 +2818,14 @@ DISHES = json.loads(r'''[
     "prep_steps": [
       {
         "act": "腌",
+        "note": "料酒生抽盐淀粉",
         "items": [
           {
             "name": "鸡腿肉",
             "amount": "400g"
           }
         ],
-        "time_minutes": 15,
-        "note": "料酒生抽盐淀粉"
+        "time_minutes": 15
       },
       {
         "act": "切",
@@ -2841,6 +2862,7 @@ DISHES = json.loads(r'''[
     "end_month": 12,
     "cooking_time": 15,
     "difficulty": "简单",
+    "health_score": 60,
     "main_ingredients": [
       {
         "name": "猪里脊",
@@ -2936,6 +2958,7 @@ DISHES = json.loads(r'''[
     "prep_steps": [
       {
         "act": "泡",
+        "note": "温水泡发",
         "items": [
           {
             "name": "木耳",
@@ -2946,17 +2969,16 @@ DISHES = json.loads(r'''[
             "amount": "30g"
           }
         ],
-        "time_minutes": 120,
-        "note": "温水泡发"
+        "time_minutes": 120
       },
       {
         "act": "洗",
+        "note": "",
         "items": [
           {
             "name": "黄瓜"
           }
-        ],
-        "note": ""
+        ]
       },
       {
         "act": "切",
@@ -2989,6 +3011,7 @@ DISHES = json.loads(r'''[
     "end_month": 12,
     "cooking_time": 10,
     "difficulty": "简单",
+    "health_score": 60,
     "main_ingredients": [
       {
         "name": "猪里脊",
@@ -3060,14 +3083,14 @@ DISHES = json.loads(r'''[
     "prep_steps": [
       {
         "act": "腌",
+        "note": "料酒淀粉盐",
         "items": [
           {
             "name": "猪里脊",
             "amount": "200g"
           }
         ],
-        "time_minutes": 10,
-        "note": "料酒淀粉盐"
+        "time_minutes": 10
       },
       {
         "act": "切",
@@ -3100,6 +3123,7 @@ DISHES = json.loads(r'''[
     "end_month": 12,
     "cooking_time": 25,
     "difficulty": "困难",
+    "health_score": 25,
     "main_ingredients": [
       {
         "name": "猪里脊",
@@ -3198,14 +3222,14 @@ DISHES = json.loads(r'''[
     "prep_steps": [
       {
         "act": "泡",
+        "note": "加水沉淀后去上层水",
         "items": [
           {
             "name": "土豆淀粉",
             "amount": "200g"
           }
         ],
-        "time_minutes": 30,
-        "note": "加水沉淀后去上层水"
+        "time_minutes": 30
       },
       {
         "act": "切",
@@ -3238,6 +3262,7 @@ DISHES = json.loads(r'''[
     "end_month": 12,
     "cooking_time": 120,
     "difficulty": "困难",
+    "health_score": 20,
     "main_ingredients": [
       {
         "name": "五花肉",
@@ -3340,12 +3365,12 @@ DISHES = json.loads(r'''[
     "prep_steps": [
       {
         "act": "洗",
+        "note": "整块洗净",
         "items": [
           {
             "name": "五花肉"
           }
-        ],
-        "note": "整块洗净"
+        ]
       },
       {
         "act": "切",
@@ -3374,6 +3399,7 @@ DISHES = json.loads(r'''[
     "end_month": 12,
     "cooking_time": 60,
     "difficulty": "中等",
+    "health_score": 35,
     "main_ingredients": [
       {
         "name": "五花肉",
@@ -3461,23 +3487,23 @@ DISHES = json.loads(r'''[
     "prep_steps": [
       {
         "act": "腌",
+        "note": "所有调料腌制",
         "items": [
           {
             "name": "五花肉",
             "amount": "500g"
           }
         ],
-        "time_minutes": 30,
-        "note": "所有调料腌制"
+        "time_minutes": 30
       },
       {
         "act": "洗",
+        "note": "",
         "items": [
           {
             "name": "红薯"
           }
-        ],
-        "note": ""
+        ]
       },
       {
         "act": "切",
@@ -3510,6 +3536,7 @@ DISHES = json.loads(r'''[
     "end_month": 12,
     "cooking_time": 25,
     "difficulty": "中等",
+    "health_score": 50,
     "main_ingredients": [
       {
         "name": "鲫鱼",
@@ -3604,12 +3631,12 @@ DISHES = json.loads(r'''[
     "prep_steps": [
       {
         "act": "洗",
+        "note": "去鳞去鳃去内脏洗净",
         "items": [
           {
             "name": "鲫鱼"
           }
-        ],
-        "note": "去鳞去鳃去内脏洗净"
+        ]
       },
       {
         "act": "切",
@@ -3642,6 +3669,7 @@ DISHES = json.loads(r'''[
     "end_month": 12,
     "cooking_time": 15,
     "difficulty": "简单",
+    "health_score": 95,
     "main_ingredients": [
       {
         "name": "鲈鱼",
@@ -3724,12 +3752,12 @@ DISHES = json.loads(r'''[
     "prep_steps": [
       {
         "act": "洗",
+        "note": "去鳞去鳃去内脏洗净",
         "items": [
           {
             "name": "鲈鱼"
           }
-        ],
-        "note": "去鳞去鳃去内脏洗净"
+        ]
       },
       {
         "act": "切",
@@ -3762,6 +3790,7 @@ DISHES = json.loads(r'''[
     "end_month": 12,
     "cooking_time": 30,
     "difficulty": "困难",
+    "health_score": 35,
     "main_ingredients": [
       {
         "name": "草鱼",
@@ -3876,23 +3905,23 @@ DISHES = json.loads(r'''[
     "prep_steps": [
       {
         "act": "腌",
+        "note": "料酒蛋清淀粉盐",
         "items": [
           {
             "name": "草鱼片",
             "amount": "约500g"
           }
         ],
-        "time_minutes": 15,
-        "note": "料酒蛋清淀粉盐"
+        "time_minutes": 15
       },
       {
         "act": "洗",
+        "note": "洗净沥干",
         "items": [
           {
             "name": "豆芽"
           }
-        ],
-        "note": "洗净沥干"
+        ]
       },
       {
         "act": "切",
@@ -3925,6 +3954,7 @@ DISHES = json.loads(r'''[
     "end_month": 12,
     "cooking_time": 25,
     "difficulty": "中等",
+    "health_score": 40,
     "main_ingredients": [
       {
         "name": "草鱼",
@@ -4028,22 +4058,22 @@ DISHES = json.loads(r'''[
     "prep_steps": [
       {
         "act": "腌",
+        "note": "料酒蛋清淀粉盐白胡椒",
         "items": [
           {
             "name": "草鱼片"
           }
         ],
-        "time_minutes": 15,
-        "note": "料酒蛋清淀粉盐白胡椒"
+        "time_minutes": 15
       },
       {
         "act": "洗",
+        "note": "酸菜多洗几遍去咸味",
         "items": [
           {
             "name": "酸菜"
           }
-        ],
-        "note": "酸菜多洗几遍去咸味"
+        ]
       },
       {
         "act": "切",
@@ -4080,6 +4110,7 @@ DISHES = json.loads(r'''[
     "end_month": 10,
     "cooking_time": 90,
     "difficulty": "简单",
+    "health_score": 75,
     "main_ingredients": [
       {
         "name": "排骨",
@@ -4151,6 +4182,7 @@ DISHES = json.loads(r'''[
     "prep_steps": [
       {
         "act": "洗",
+        "note": "排骨冷水浸泡去血水",
         "items": [
           {
             "name": "排骨"
@@ -4161,8 +4193,7 @@ DISHES = json.loads(r'''[
           {
             "name": "胡萝卜"
           }
-        ],
-        "note": "排骨冷水浸泡去血水"
+        ]
       },
       {
         "act": "切",
@@ -4195,6 +4226,7 @@ DISHES = json.loads(r'''[
     "end_month": 9,
     "cooking_time": 90,
     "difficulty": "简单",
+    "health_score": 75,
     "main_ingredients": [
       {
         "name": "排骨",
@@ -4258,6 +4290,7 @@ DISHES = json.loads(r'''[
     "prep_steps": [
       {
         "act": "洗",
+        "note": "排骨浸泡去血水",
         "items": [
           {
             "name": "排骨"
@@ -4265,8 +4298,7 @@ DISHES = json.loads(r'''[
           {
             "name": "冬瓜"
           }
-        ],
-        "note": "排骨浸泡去血水"
+        ]
       },
       {
         "act": "切",
@@ -4295,6 +4327,7 @@ DISHES = json.loads(r'''[
     "end_month": 12,
     "cooking_time": 120,
     "difficulty": "简单",
+    "health_score": 80,
     "main_ingredients": [
       {
         "name": "老母鸡",
@@ -4362,6 +4395,7 @@ DISHES = json.loads(r'''[
     "prep_steps": [
       {
         "act": "洗",
+        "note": "鸡洗净斩块",
         "items": [
           {
             "name": "老母鸡"
@@ -4369,8 +4403,7 @@ DISHES = json.loads(r'''[
           {
             "name": "山药"
           }
-        ],
-        "note": "鸡洗净斩块"
+        ]
       },
       {
         "act": "切",
@@ -4399,6 +4432,7 @@ DISHES = json.loads(r'''[
     "end_month": 12,
     "cooking_time": 100,
     "difficulty": "中等",
+    "health_score": 70,
     "main_ingredients": [
       {
         "name": "牛腩",
@@ -4478,16 +4512,17 @@ DISHES = json.loads(r'''[
     "prep_steps": [
       {
         "act": "泡",
+        "note": "冷水浸泡去血水",
         "items": [
           {
             "name": "牛腩"
           }
         ],
-        "time_minutes": 20,
-        "note": "冷水浸泡去血水"
+        "time_minutes": 20
       },
       {
         "act": "洗",
+        "note": "",
         "items": [
           {
             "name": "番茄"
@@ -4495,8 +4530,7 @@ DISHES = json.loads(r'''[
           {
             "name": "土豆"
           }
-        ],
-        "note": ""
+        ]
       },
       {
         "act": "切",
@@ -4533,6 +4567,7 @@ DISHES = json.loads(r'''[
     "end_month": 3,
     "cooking_time": 90,
     "difficulty": "简单",
+    "health_score": 75,
     "main_ingredients": [
       {
         "name": "排骨",
@@ -4600,6 +4635,7 @@ DISHES = json.loads(r'''[
     "prep_steps": [
       {
         "act": "洗",
+        "note": "排骨浸泡",
         "items": [
           {
             "name": "排骨"
@@ -4607,8 +4643,7 @@ DISHES = json.loads(r'''[
           {
             "name": "白萝卜"
           }
-        ],
-        "note": "排骨浸泡"
+        ]
       },
       {
         "act": "切",
@@ -4641,6 +4676,7 @@ DISHES = json.loads(r'''[
     "end_month": 12,
     "cooking_time": 10,
     "difficulty": "简单",
+    "health_score": 85,
     "main_ingredients": [
       {
         "name": "番茄",
@@ -4700,6 +4736,7 @@ DISHES = json.loads(r'''[
     "prep_steps": [
       {
         "act": "洗",
+        "note": "",
         "items": [
           {
             "name": "番茄"
@@ -4707,8 +4744,7 @@ DISHES = json.loads(r'''[
           {
             "name": "葱"
           }
-        ],
-        "note": ""
+        ]
       },
       {
         "act": "切",
@@ -4733,6 +4769,7 @@ DISHES = json.loads(r'''[
     "end_month": 12,
     "cooking_time": 5,
     "difficulty": "简单",
+    "health_score": 90,
     "main_ingredients": [
       {
         "name": "鸡蛋",
@@ -4809,6 +4846,7 @@ DISHES = json.loads(r'''[
     "end_month": 12,
     "cooking_time": 5,
     "difficulty": "简单",
+    "health_score": 85,
     "main_ingredients": [
       {
         "name": "黄瓜",
@@ -4885,6 +4923,7 @@ DISHES = json.loads(r'''[
     "end_month": 12,
     "cooking_time": 8,
     "difficulty": "简单",
+    "health_score": 95,
     "main_ingredients": [
       {
         "name": "嫩豆腐",
@@ -4940,12 +4979,12 @@ DISHES = json.loads(r'''[
     "prep_steps": [
       {
         "act": "洗",
+        "note": "逐片洗净",
         "items": [
           {
             "name": "青菜"
           }
-        ],
-        "note": "逐片洗净"
+        ]
       },
       {
         "act": "切",
@@ -4966,6 +5005,7 @@ DISHES = json.loads(r'''[
     "end_month": 12,
     "cooking_time": 10,
     "difficulty": "简单",
+    "health_score": 70,
     "main_ingredients": [
       {
         "name": "土豆",
@@ -5040,12 +5080,12 @@ DISHES = json.loads(r'''[
     "prep_steps": [
       {
         "act": "洗",
+        "note": "泡水5分钟去淀粉",
         "items": [
           {
             "name": "土豆"
           }
-        ],
-        "note": "泡水5分钟去淀粉"
+        ]
       },
       {
         "act": "切",
@@ -5078,6 +5118,7 @@ DISHES = json.loads(r'''[
     "end_month": 12,
     "cooking_time": 10,
     "difficulty": "简单",
+    "health_score": 75,
     "main_ingredients": [
       {
         "name": "包菜",
@@ -5137,12 +5178,12 @@ DISHES = json.loads(r'''[
     "prep_steps": [
       {
         "act": "洗",
+        "note": "手撕后洗净沥干",
         "items": [
           {
             "name": "包菜"
           }
-        ],
-        "note": "手撕后洗净沥干"
+        ]
       },
       {
         "act": "切",
@@ -5163,6 +5204,7 @@ DISHES = json.loads(r'''[
     "end_month": 12,
     "cooking_time": 10,
     "difficulty": "简单",
+    "health_score": 70,
     "main_ingredients": [
       {
         "name": "番茄",
@@ -5229,6 +5271,7 @@ DISHES = json.loads(r'''[
     "prep_steps": [
       {
         "act": "洗",
+        "note": "",
         "items": [
           {
             "name": "番茄"
@@ -5236,8 +5279,7 @@ DISHES = json.loads(r'''[
           {
             "name": "葱"
           }
-        ],
-        "note": ""
+        ]
       },
       {
         "act": "切",
@@ -5262,6 +5304,7 @@ DISHES = json.loads(r'''[
     "end_month": 12,
     "cooking_time": 10,
     "difficulty": "简单",
+    "health_score": 85,
     "main_ingredients": [
       {
         "name": "西兰花",
@@ -5324,22 +5367,22 @@ DISHES = json.loads(r'''[
     "prep_steps": [
       {
         "act": "泡",
+        "note": "盐水浸泡",
         "items": [
           {
             "name": "西兰花"
           }
         ],
-        "time_minutes": 10,
-        "note": "盐水浸泡"
+        "time_minutes": 10
       },
       {
         "act": "洗",
+        "note": "泡后冲洗",
         "items": [
           {
             "name": "西兰花"
           }
-        ],
-        "note": "泡后冲洗"
+        ]
       },
       {
         "act": "切",
@@ -5364,6 +5407,7 @@ DISHES = json.loads(r'''[
     "end_month": 12,
     "cooking_time": 5,
     "difficulty": "简单",
+    "health_score": 85,
     "main_ingredients": [
       {
         "name": "生菜",
@@ -5419,12 +5463,12 @@ DISHES = json.loads(r'''[
     "prep_steps": [
       {
         "act": "洗",
+        "note": "逐片洗净",
         "items": [
           {
             "name": "生菜"
           }
-        ],
-        "note": "逐片洗净"
+        ]
       },
       {
         "act": "切",
@@ -5445,6 +5489,7 @@ DISHES = json.loads(r'''[
     "end_month": 12,
     "cooking_time": 20,
     "difficulty": "中等",
+    "health_score": 55,
     "main_ingredients": [
       {
         "name": "土豆",
@@ -5524,6 +5569,7 @@ DISHES = json.loads(r'''[
     "prep_steps": [
       {
         "act": "洗",
+        "note": "",
         "items": [
           {
             "name": "土豆"
@@ -5534,8 +5580,7 @@ DISHES = json.loads(r'''[
           {
             "name": "青椒"
           }
-        ],
-        "note": ""
+        ]
       },
       {
         "act": "切",
@@ -5572,6 +5617,7 @@ DISHES = json.loads(r'''[
     "end_month": 9,
     "cooking_time": 15,
     "difficulty": "中等",
+    "health_score": 55,
     "main_ingredients": [
       {
         "name": "四季豆",
@@ -5635,12 +5681,12 @@ DISHES = json.loads(r'''[
     "prep_steps": [
       {
         "act": "洗",
+        "note": "去筋洗净沥干",
         "items": [
           {
             "name": "四季豆"
           }
-        ],
-        "note": "去筋洗净沥干"
+        ]
       },
       {
         "act": "切",
@@ -5661,6 +5707,7 @@ DISHES = json.loads(r'''[
     "end_month": 12,
     "cooking_time": 15,
     "difficulty": "简单",
+    "health_score": 65,
     "main_ingredients": [
       {
         "name": "老豆腐",
@@ -5732,6 +5779,7 @@ DISHES = json.loads(r'''[
     "prep_steps": [
       {
         "act": "洗",
+        "note": "",
         "items": [
           {
             "name": "青椒"
@@ -5739,8 +5787,7 @@ DISHES = json.loads(r'''[
           {
             "name": "红椒"
           }
-        ],
-        "note": ""
+        ]
       },
       {
         "act": "切",
@@ -5777,6 +5824,7 @@ DISHES = json.loads(r'''[
     "end_month": 12,
     "cooking_time": 15,
     "difficulty": "中等",
+    "health_score": 60,
     "main_ingredients": [
       {
         "name": "嫩豆腐",
@@ -5863,12 +5911,12 @@ DISHES = json.loads(r'''[
     "prep_steps": [
       {
         "act": "洗",
+        "note": "",
         "items": [
           {
             "name": "嫩豆腐"
           }
-        ],
-        "note": ""
+        ]
       },
       {
         "act": "切",
@@ -5901,6 +5949,7 @@ DISHES = json.loads(r'''[
     "end_month": 12,
     "cooking_time": 15,
     "difficulty": "中等",
+    "health_score": 50,
     "main_ingredients": [
       {
         "name": "茄子",
@@ -5980,23 +6029,23 @@ DISHES = json.loads(r'''[
     "prep_steps": [
       {
         "act": "腌",
+        "note": "撒盐腌后挤水",
         "items": [
           {
             "name": "茄子",
             "amount": "2个"
           }
         ],
-        "time_minutes": 10,
-        "note": "撒盐腌后挤水"
+        "time_minutes": 10
       },
       {
         "act": "洗",
+        "note": "",
         "items": [
           {
             "name": "青椒"
           }
-        ],
-        "note": ""
+        ]
       },
       {
         "act": "切",
@@ -6029,6 +6078,7 @@ DISHES = json.loads(r'''[
     "end_month": 9,
     "cooking_time": 5,
     "difficulty": "简单",
+    "health_score": 85,
     "main_ingredients": [
       {
         "name": "空心菜",
@@ -6079,12 +6129,12 @@ DISHES = json.loads(r'''[
     "prep_steps": [
       {
         "act": "洗",
+        "note": "摘去老茎洗净",
         "items": [
           {
             "name": "空心菜"
           }
-        ],
-        "note": "摘去老茎洗净"
+        ]
       },
       {
         "act": "切",
@@ -6105,6 +6155,7 @@ DISHES = json.loads(r'''[
     "end_month": 12,
     "cooking_time": 8,
     "difficulty": "简单",
+    "health_score": 75,
     "main_ingredients": [
       {
         "name": "大白菜",
@@ -6168,12 +6219,12 @@ DISHES = json.loads(r'''[
     "prep_steps": [
       {
         "act": "洗",
+        "note": "洗净沥干",
         "items": [
           {
             "name": "大白菜"
           }
-        ],
-        "note": "洗净沥干"
+        ]
       },
       {
         "act": "切",
@@ -6198,6 +6249,7 @@ DISHES = json.loads(r'''[
     "end_month": 12,
     "cooking_time": 8,
     "difficulty": "简单",
+    "health_score": 75,
     "main_ingredients": [
       {
         "name": "大白菜",
@@ -6269,12 +6321,12 @@ DISHES = json.loads(r'''[
     "prep_steps": [
       {
         "act": "洗",
+        "note": "洗净沥干",
         "items": [
           {
             "name": "大白菜"
           }
-        ],
-        "note": "洗净沥干"
+        ]
       },
       {
         "act": "切",
@@ -6299,6 +6351,7 @@ DISHES = json.loads(r'''[
     "end_month": 12,
     "cooking_time": 5,
     "difficulty": "简单",
+    "health_score": 85,
     "main_ingredients": [
       {
         "name": "豆苗",
@@ -6346,12 +6399,12 @@ DISHES = json.loads(r'''[
     "prep_steps": [
       {
         "act": "洗",
+        "note": "洗净沥干",
         "items": [
           {
             "name": "豆苗"
           }
-        ],
-        "note": "洗净沥干"
+        ]
       },
       {
         "act": "切",
@@ -6372,6 +6425,7 @@ DISHES = json.loads(r'''[
     "end_month": 12,
     "cooking_time": 20,
     "difficulty": "中等",
+    "health_score": 50,
     "main_ingredients": [
       {
         "name": "茄子",
@@ -6459,14 +6513,14 @@ DISHES = json.loads(r'''[
     "prep_steps": [
       {
         "act": "腌",
+        "note": "撒盐腌挤水",
         "items": [
           {
             "name": "茄子",
             "amount": "2个"
           }
         ],
-        "time_minutes": 10,
-        "note": "撒盐腌挤水"
+        "time_minutes": 10
       },
       {
         "act": "切",
@@ -6499,6 +6553,7 @@ DISHES = json.loads(r'''[
     "end_month": 12,
     "cooking_time": 10,
     "difficulty": "简单",
+    "health_score": 40,
     "main_ingredients": [
       {
         "name": "粉丝",
@@ -6586,14 +6641,14 @@ DISHES = json.loads(r'''[
     "prep_steps": [
       {
         "act": "泡",
+        "note": "温水泡软",
         "items": [
           {
             "name": "粉丝",
             "amount": "2把"
           }
         ],
-        "time_minutes": 15,
-        "note": "温水泡软"
+        "time_minutes": 15
       },
       {
         "act": "切",
@@ -6622,6 +6677,7 @@ DISHES = json.loads(r'''[
     "end_month": 12,
     "cooking_time": 15,
     "difficulty": "中等",
+    "health_score": 60,
     "main_ingredients": [
       {
         "name": "老豆腐",
@@ -6713,12 +6769,12 @@ DISHES = json.loads(r'''[
     "prep_steps": [
       {
         "act": "洗",
+        "note": "",
         "items": [
           {
             "name": "葱"
           }
-        ],
-        "note": ""
+        ]
       },
       {
         "act": "切",
@@ -6751,6 +6807,7 @@ DISHES = json.loads(r'''[
     "end_month": 12,
     "cooking_time": 8,
     "difficulty": "简单",
+    "health_score": 70,
     "main_ingredients": [
       {
         "name": "韭菜",
@@ -6801,12 +6858,12 @@ DISHES = json.loads(r'''[
     "prep_steps": [
       {
         "act": "洗",
+        "note": "逐根洗净",
         "items": [
           {
             "name": "韭菜"
           }
-        ],
-        "note": "逐根洗净"
+        ]
       },
       {
         "act": "切",
@@ -6827,6 +6884,7 @@ DISHES = json.loads(r'''[
     "end_month": 12,
     "cooking_time": 10,
     "difficulty": "简单",
+    "health_score": 65,
     "main_ingredients": [
       {
         "name": "蒜苗",
@@ -6898,12 +6956,12 @@ DISHES = json.loads(r'''[
     "prep_steps": [
       {
         "act": "洗",
+        "note": "逐根洗净",
         "items": [
           {
             "name": "蒜苗"
           }
-        ],
-        "note": "逐根洗净"
+        ]
       },
       {
         "act": "切",
@@ -6932,6 +6990,7 @@ DISHES = json.loads(r'''[
     "end_month": 12,
     "cooking_time": 8,
     "difficulty": "简单",
+    "health_score": 70,
     "main_ingredients": [
       {
         "name": "西葫芦",
@@ -6987,12 +7046,12 @@ DISHES = json.loads(r'''[
     "prep_steps": [
       {
         "act": "洗",
+        "note": "",
         "items": [
           {
             "name": "西葫芦"
           }
-        ],
-        "note": ""
+        ]
       },
       {
         "act": "切",
@@ -7017,6 +7076,7 @@ DISHES = json.loads(r'''[
     "end_month": 12,
     "cooking_time": 8,
     "difficulty": "简单",
+    "health_score": 65,
     "main_ingredients": [
       {
         "name": "芹菜",
@@ -7088,12 +7148,12 @@ DISHES = json.loads(r'''[
     "prep_steps": [
       {
         "act": "洗",
+        "note": "去叶洗净",
         "items": [
           {
             "name": "芹菜"
           }
-        ],
-        "note": "去叶洗净"
+        ]
       },
       {
         "act": "切",
@@ -7122,6 +7182,7 @@ DISHES = json.loads(r'''[
     "end_month": 9,
     "cooking_time": 8,
     "difficulty": "简单",
+    "health_score": 70,
     "main_ingredients": [
       {
         "name": "丝瓜",
@@ -7177,12 +7238,12 @@ DISHES = json.loads(r'''[
     "prep_steps": [
       {
         "act": "洗",
+        "note": "",
         "items": [
           {
             "name": "丝瓜"
           }
-        ],
-        "note": ""
+        ]
       },
       {
         "act": "切",
@@ -7207,6 +7268,7 @@ DISHES = json.loads(r'''[
     "end_month": 12,
     "cooking_time": 12,
     "difficulty": "简单",
+    "health_score": 65,
     "main_ingredients": [
       {
         "name": "老豆腐",
@@ -7282,12 +7344,12 @@ DISHES = json.loads(r'''[
     "prep_steps": [
       {
         "act": "洗",
+        "note": "",
         "items": [
           {
             "name": "葱"
           }
-        ],
-        "note": ""
+        ]
       },
       {
         "act": "切",
@@ -7304,6 +7366,2176 @@ DISHES = json.loads(r'''[
             "name": "姜",
             "shape": "末"
           },
+          {
+            "name": "蒜",
+            "shape": "末"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "苦瓜炒蛋",
+    "dtype": "素菜",
+    "ftype": "草",
+    "start_month": 6,
+    "end_month": 9,
+    "cooking_time": 10,
+    "difficulty": "简单",
+    "health_score": 80,
+    "main_ingredients": [
+      {
+        "name": "苦瓜",
+        "amount": "1根"
+      },
+      {
+        "name": "鸡蛋",
+        "amount": "3个"
+      }
+    ],
+    "side_ingredients": [
+      {
+        "name": "蒜",
+        "amount": "2瓣"
+      }
+    ],
+    "seasonings": [
+      {
+        "name": "盐",
+        "amount": "适量"
+      }
+    ],
+    "cooking_steps": [
+      {
+        "name": "苦瓜对半切开去瓤切薄片",
+        "step": 1
+      },
+      {
+        "name": "苦瓜加盐腌10分钟挤去苦水",
+        "step": 2
+      },
+      {
+        "name": "鸡蛋打散炒熟盛出",
+        "step": 3
+      },
+      {
+        "name": "蒜末爆香下苦瓜翻炒",
+        "step": 4
+      },
+      {
+        "name": "倒回鸡蛋加盐翻匀",
+        "step": 5
+      }
+    ],
+    "attentions": [
+      {
+        "name": "加盐腌挤水可以去掉大部分苦味"
+      },
+      {
+        "name": "切得越薄越不苦"
+      }
+    ],
+    "prep_steps": [
+      {
+        "act": "腌",
+        "note": "加盐腌后挤去苦水",
+        "items": [
+          {
+            "name": "苦瓜",
+            "amount": "1根"
+          }
+        ],
+        "time_minutes": 10
+      },
+      {
+        "act": "洗",
+        "note": "",
+        "items": [
+          {
+            "name": "苦瓜"
+          }
+        ]
+      },
+      {
+        "act": "切",
+        "items": [
+          {
+            "name": "苦瓜",
+            "shape": "薄片"
+          },
+          {
+            "name": "蒜",
+            "shape": "末"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "苦瓜炒肉",
+    "dtype": "硬菜",
+    "ftype": "草",
+    "start_month": 6,
+    "end_month": 9,
+    "cooking_time": 12,
+    "difficulty": "简单",
+    "health_score": 80,
+    "main_ingredients": [
+      {
+        "name": "苦瓜",
+        "amount": "1根"
+      },
+      {
+        "name": "猪肉",
+        "amount": "150g"
+      }
+    ],
+    "side_ingredients": [
+      {
+        "name": "蒜",
+        "amount": "3瓣"
+      },
+      {
+        "name": "豆豉",
+        "amount": "1勺"
+      },
+      {
+        "name": "干辣椒",
+        "amount": "3个"
+      }
+    ],
+    "seasonings": [
+      {
+        "name": "生抽",
+        "amount": "1勺"
+      },
+      {
+        "name": "料酒",
+        "amount": "1勺"
+      },
+      {
+        "name": "淀粉",
+        "amount": "1勺"
+      },
+      {
+        "name": "盐",
+        "amount": "适量"
+      }
+    ],
+    "cooking_steps": [
+      {
+        "name": "猪肉切片加料酒淀粉生抽腌10分钟",
+        "step": 1
+      },
+      {
+        "name": "苦瓜去瓤切片，加盐腌后挤水",
+        "step": 2
+      },
+      {
+        "name": "油热下肉片滑炒变色盛出",
+        "step": 3
+      },
+      {
+        "name": "下蒜豆豉干辣椒爆香",
+        "step": 4
+      },
+      {
+        "name": "下苦瓜翻炒1分钟",
+        "step": 5
+      },
+      {
+        "name": "倒回肉片加盐翻匀",
+        "step": 6
+      }
+    ],
+    "attentions": [
+      {
+        "name": "苦瓜腌过挤水后苦味大减"
+      },
+      {
+        "name": "豆豉是点睛之笔"
+      }
+    ],
+    "prep_steps": [
+      {
+        "act": "腌",
+        "note": "加盐腌挤水",
+        "items": [
+          {
+            "name": "苦瓜",
+            "amount": "1根"
+          }
+        ],
+        "time_minutes": 10
+      },
+      {
+        "act": "腌",
+        "note": "料酒生抽淀粉",
+        "items": [
+          {
+            "name": "猪肉",
+            "amount": "150g"
+          }
+        ],
+        "time_minutes": 10
+      },
+      {
+        "act": "切",
+        "items": [
+          {
+            "name": "猪肉",
+            "shape": "片"
+          },
+          {
+            "name": "苦瓜",
+            "shape": "片"
+          },
+          {
+            "name": "蒜",
+            "shape": "末"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "冬瓜肉丸汤",
+    "dtype": "肉汤",
+    "ftype": "跑",
+    "start_month": 7,
+    "end_month": 9,
+    "cooking_time": 40,
+    "difficulty": "简单",
+    "health_score": 80,
+    "main_ingredients": [
+      {
+        "name": "猪肉末",
+        "amount": "300g"
+      },
+      {
+        "name": "冬瓜",
+        "amount": "500g"
+      }
+    ],
+    "side_ingredients": [
+      {
+        "name": "姜",
+        "amount": "5片"
+      },
+      {
+        "name": "葱",
+        "amount": "2根"
+      },
+      {
+        "name": "鸡蛋",
+        "amount": "1个"
+      }
+    ],
+    "seasonings": [
+      {
+        "name": "盐",
+        "amount": "适量"
+      },
+      {
+        "name": "料酒",
+        "amount": "2勺"
+      },
+      {
+        "name": "淀粉",
+        "amount": "1勺"
+      },
+      {
+        "name": "白胡椒粉",
+        "amount": "少许"
+      },
+      {
+        "name": "香油",
+        "amount": "几滴"
+      }
+    ],
+    "cooking_steps": [
+      {
+        "name": "肉末加蛋清料酒淀粉盐胡椒粉搅上劲",
+        "step": 1
+      },
+      {
+        "name": "冬瓜去皮切块",
+        "step": 2
+      },
+      {
+        "name": "水开下姜片和冬瓜煮5分钟",
+        "step": 3
+      },
+      {
+        "name": "转小火挤肉丸下锅",
+        "step": 4
+      },
+      {
+        "name": "煮至肉丸浮起加盐香油",
+        "step": 5
+      },
+      {
+        "name": "撒葱花出锅",
+        "step": 6
+      }
+    ],
+    "attentions": [
+      {
+        "name": "肉馅要一个方向搅上劲才Q弹"
+      },
+      {
+        "name": "小火下丸子不会散"
+      }
+    ],
+    "prep_steps": [
+      {
+        "act": "洗",
+        "note": "",
+        "items": [
+          {
+            "name": "冬瓜"
+          }
+        ]
+      },
+      {
+        "act": "切",
+        "items": [
+          {
+            "name": "冬瓜",
+            "shape": "块"
+          },
+          {
+            "name": "姜",
+            "shape": "片"
+          },
+          {
+            "name": "葱",
+            "shape": "葱花"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "黄瓜炒肉",
+    "dtype": "硬菜",
+    "ftype": "草",
+    "start_month": 6,
+    "end_month": 9,
+    "cooking_time": 8,
+    "difficulty": "简单",
+    "health_score": 80,
+    "main_ingredients": [
+      {
+        "name": "黄瓜",
+        "amount": "2根"
+      },
+      {
+        "name": "猪肉",
+        "amount": "150g"
+      }
+    ],
+    "side_ingredients": [
+      {
+        "name": "蒜",
+        "amount": "3瓣"
+      },
+      {
+        "name": "干辣椒",
+        "amount": "3个"
+      }
+    ],
+    "seasonings": [
+      {
+        "name": "生抽",
+        "amount": "1勺"
+      },
+      {
+        "name": "料酒",
+        "amount": "1勺"
+      },
+      {
+        "name": "淀粉",
+        "amount": "1勺"
+      },
+      {
+        "name": "盐",
+        "amount": "适量"
+      }
+    ],
+    "cooking_steps": [
+      {
+        "name": "猪肉切片加料酒淀粉生抽腌10分钟",
+        "step": 1
+      },
+      {
+        "name": "黄瓜切片",
+        "step": 2
+      },
+      {
+        "name": "油热下肉片滑炒变色盛出",
+        "step": 3
+      },
+      {
+        "name": "下蒜干辣椒爆香",
+        "step": 4
+      },
+      {
+        "name": "下黄瓜大火快炒30秒",
+        "step": 5
+      },
+      {
+        "name": "倒回肉片加盐翻匀",
+        "step": 6
+      }
+    ],
+    "attentions": [
+      {
+        "name": "黄瓜不要炒太久保持脆爽"
+      },
+      {
+        "name": "肉先腌才嫩"
+      }
+    ],
+    "prep_steps": [
+      {
+        "act": "腌",
+        "note": "料酒淀粉生抽",
+        "items": [
+          {
+            "name": "猪肉",
+            "amount": "150g"
+          }
+        ],
+        "time_minutes": 10
+      },
+      {
+        "act": "切",
+        "items": [
+          {
+            "name": "黄瓜",
+            "shape": "片"
+          },
+          {
+            "name": "猪肉",
+            "shape": "片"
+          },
+          {
+            "name": "蒜",
+            "shape": "末"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "凉拌黄瓜",
+    "dtype": "素菜",
+    "ftype": "草",
+    "start_month": 6,
+    "end_month": 9,
+    "cooking_time": 5,
+    "difficulty": "简单",
+    "health_score": 80,
+    "main_ingredients": [
+      {
+        "name": "黄瓜",
+        "amount": "2根"
+      }
+    ],
+    "side_ingredients": [
+      {
+        "name": "蒜",
+        "amount": "5瓣"
+      },
+      {
+        "name": "小米辣",
+        "amount": "3个"
+      },
+      {
+        "name": "香菜",
+        "amount": "2根"
+      }
+    ],
+    "seasonings": [
+      {
+        "name": "生抽",
+        "amount": "2勺"
+      },
+      {
+        "name": "醋",
+        "amount": "2勺"
+      },
+      {
+        "name": "盐",
+        "amount": "适量"
+      },
+      {
+        "name": "糖",
+        "amount": "半勺"
+      },
+      {
+        "name": "香油",
+        "amount": "1勺"
+      }
+    ],
+    "cooking_steps": [
+      {
+        "name": "黄瓜拍碎切段",
+        "step": 1
+      },
+      {
+        "name": "蒜切末小米辣切圈",
+        "step": 2
+      },
+      {
+        "name": "生抽醋盐糖香油调成汁",
+        "step": 3
+      },
+      {
+        "name": "所有材料拌匀",
+        "step": 4
+      },
+      {
+        "name": "撒香菜上桌",
+        "step": 5
+      }
+    ],
+    "attentions": [
+      {
+        "name": "黄瓜用刀拍比切更入味"
+      },
+      {
+        "name": "现拌现吃，不要提前拌"
+      }
+    ],
+    "prep_steps": [
+      {
+        "act": "洗",
+        "note": "",
+        "items": [
+          {
+            "name": "黄瓜"
+          },
+          {
+            "name": "香菜"
+          }
+        ]
+      },
+      {
+        "act": "切",
+        "items": [
+          {
+            "name": "黄瓜",
+            "shape": "拍碎切段"
+          },
+          {
+            "name": "蒜",
+            "shape": "末"
+          },
+          {
+            "name": "小米辣",
+            "shape": "圈"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "绿豆汤",
+    "dtype": "素汤",
+    "ftype": "草",
+    "start_month": 6,
+    "end_month": 9,
+    "cooking_time": 40,
+    "difficulty": "简单",
+    "health_score": 80,
+    "main_ingredients": [
+      {
+        "name": "绿豆",
+        "amount": "200g"
+      },
+      {
+        "name": "冰糖",
+        "amount": "50g"
+      }
+    ],
+    "side_ingredients": [],
+    "seasonings": [],
+    "cooking_steps": [
+      {
+        "name": "绿豆洗净泡1小时",
+        "step": 1
+      },
+      {
+        "name": "绿豆冷水下锅大火煮开",
+        "step": 2
+      },
+      {
+        "name": "转小火煮30分钟至开花",
+        "step": 3
+      },
+      {
+        "name": "加冰糖搅匀放凉",
+        "step": 4
+      }
+    ],
+    "attentions": [
+      {
+        "name": "提前泡发更容易煮开花"
+      },
+      {
+        "name": "冷藏后更好喝"
+      },
+      {
+        "name": "体质虚寒少喝"
+      }
+    ],
+    "prep_steps": [
+      {
+        "act": "泡",
+        "note": "冷水泡1小时",
+        "items": [
+          {
+            "name": "绿豆",
+            "amount": "200g"
+          }
+        ],
+        "time_minutes": 60
+      },
+      {
+        "act": "洗",
+        "note": "洗净沥干",
+        "items": [
+          {
+            "name": "绿豆"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "莲子百合汤",
+    "dtype": "素汤",
+    "ftype": "草",
+    "start_month": 6,
+    "end_month": 9,
+    "cooking_time": 30,
+    "difficulty": "简单",
+    "health_score": 80,
+    "main_ingredients": [
+      {
+        "name": "莲子",
+        "amount": "50g"
+      },
+      {
+        "name": "百合",
+        "amount": "30g"
+      },
+      {
+        "name": "银耳",
+        "amount": "1朵"
+      },
+      {
+        "name": "冰糖",
+        "amount": "30g"
+      }
+    ],
+    "side_ingredients": [
+      {
+        "name": "枸杞",
+        "amount": "10粒"
+      }
+    ],
+    "seasonings": [],
+    "cooking_steps": [
+      {
+        "name": "银耳泡发撕小朵，莲子去芯泡1小时",
+        "step": 1
+      },
+      {
+        "name": "银耳加足水大火煮开转小火炖20分钟",
+        "step": 2
+      },
+      {
+        "name": "加莲子百合继续炖15分钟",
+        "step": 3
+      },
+      {
+        "name": "加冰糖枸杞搅匀",
+        "step": 4
+      }
+    ],
+    "attentions": [
+      {
+        "name": "银耳要泡发充分才出胶"
+      },
+      {
+        "name": "莲子去芯否则会苦"
+      }
+    ],
+    "prep_steps": [
+      {
+        "act": "泡",
+        "note": "银耳泡发撕小朵，莲子去芯泡1小时",
+        "items": [
+          {
+            "name": "银耳",
+            "amount": "1朵"
+          },
+          {
+            "name": "莲子",
+            "amount": "50g"
+          }
+        ],
+        "time_minutes": 60
+      },
+      {
+        "act": "洗",
+        "note": "",
+        "items": [
+          {
+            "name": "百合"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "黄瓜皮蛋汤",
+    "dtype": "素汤",
+    "ftype": "草",
+    "start_month": 6,
+    "end_month": 9,
+    "cooking_time": 8,
+    "difficulty": "简单",
+    "health_score": 80,
+    "main_ingredients": [
+      {
+        "name": "黄瓜",
+        "amount": "1根"
+      },
+      {
+        "name": "皮蛋",
+        "amount": "2个"
+      }
+    ],
+    "side_ingredients": [
+      {
+        "name": "姜",
+        "amount": "3片"
+      },
+      {
+        "name": "葱",
+        "amount": "1根"
+      }
+    ],
+    "seasonings": [
+      {
+        "name": "盐",
+        "amount": "适量"
+      },
+      {
+        "name": "香油",
+        "amount": "几滴"
+      }
+    ],
+    "cooking_steps": [
+      {
+        "name": "黄瓜切片皮蛋切块",
+        "step": 1
+      },
+      {
+        "name": "油热下姜片皮蛋煎一下",
+        "step": 2
+      },
+      {
+        "name": "加开水煮2分钟至汤变白",
+        "step": 3
+      },
+      {
+        "name": "下黄瓜片煮30秒",
+        "step": 4
+      },
+      {
+        "name": "加盐香油撒葱花",
+        "step": 5
+      }
+    ],
+    "attentions": [
+      {
+        "name": "皮蛋先煎一下汤才白"
+      },
+      {
+        "name": "黄瓜最后放保持清香"
+      }
+    ],
+    "prep_steps": [
+      {
+        "act": "切",
+        "items": [
+          {
+            "name": "黄瓜",
+            "shape": "片"
+          },
+          {
+            "name": "皮蛋",
+            "shape": "块"
+          },
+          {
+            "name": "姜",
+            "shape": "片"
+          },
+          {
+            "name": "葱",
+            "shape": "葱花"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "冬瓜海带汤",
+    "dtype": "素汤",
+    "ftype": "草",
+    "start_month": 7,
+    "end_month": 9,
+    "cooking_time": 20,
+    "difficulty": "简单",
+    "health_score": 80,
+    "main_ingredients": [
+      {
+        "name": "冬瓜",
+        "amount": "500g"
+      },
+      {
+        "name": "海带",
+        "amount": "100g"
+      }
+    ],
+    "side_ingredients": [
+      {
+        "name": "姜",
+        "amount": "3片"
+      },
+      {
+        "name": "虾皮",
+        "amount": "1把"
+      }
+    ],
+    "seasonings": [
+      {
+        "name": "盐",
+        "amount": "适量"
+      },
+      {
+        "name": "香油",
+        "amount": "几滴"
+      }
+    ],
+    "cooking_steps": [
+      {
+        "name": "海带泡发洗净切片",
+        "step": 1
+      },
+      {
+        "name": "冬瓜去皮切块",
+        "step": 2
+      },
+      {
+        "name": "水开下姜片海带煮10分钟",
+        "step": 3
+      },
+      {
+        "name": "下冬瓜再煮5分钟",
+        "step": 4
+      },
+      {
+        "name": "加盐虾皮香油",
+        "step": 5
+      }
+    ],
+    "attentions": [
+      {
+        "name": "海带要泡发完全"
+      },
+      {
+        "name": "虾皮提鲜不用加味精"
+      }
+    ],
+    "prep_steps": [
+      {
+        "act": "泡",
+        "note": "泡发洗净",
+        "items": [
+          {
+            "name": "海带",
+            "amount": "100g"
+          }
+        ],
+        "time_minutes": 30
+      },
+      {
+        "act": "洗",
+        "note": "",
+        "items": [
+          {
+            "name": "冬瓜"
+          }
+        ]
+      },
+      {
+        "act": "切",
+        "items": [
+          {
+            "name": "海带",
+            "shape": "片"
+          },
+          {
+            "name": "冬瓜",
+            "shape": "块"
+          },
+          {
+            "name": "姜",
+            "shape": "片"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "蒜泥白肉",
+    "dtype": "硬菜",
+    "ftype": "跑",
+    "start_month": 1,
+    "end_month": 12,
+    "cooking_time": 25,
+    "difficulty": "中等",
+    "health_score": 80,
+    "main_ingredients": [
+      {
+        "name": "五花肉",
+        "amount": "400g"
+      },
+      {
+        "name": "黄瓜",
+        "amount": "1根"
+      }
+    ],
+    "side_ingredients": [
+      {
+        "name": "蒜",
+        "amount": "1整头"
+      },
+      {
+        "name": "葱",
+        "amount": "2根"
+      },
+      {
+        "name": "姜",
+        "amount": "5片"
+      }
+    ],
+    "seasonings": [
+      {
+        "name": "生抽",
+        "amount": "2勺"
+      },
+      {
+        "name": "醋",
+        "amount": "1勺"
+      },
+      {
+        "name": "辣椒油",
+        "amount": "2勺"
+      },
+      {
+        "name": "白糖",
+        "amount": "半勺"
+      },
+      {
+        "name": "花椒粉",
+        "amount": "少许"
+      },
+      {
+        "name": "料酒",
+        "amount": "2勺"
+      }
+    ],
+    "cooking_steps": [
+      {
+        "name": "五花肉冷水下锅加姜料酒煮20分钟",
+        "step": 1
+      },
+      {
+        "name": "捞出放凉切薄片",
+        "step": 2
+      },
+      {
+        "name": "黄瓜切丝铺盘底",
+        "step": 3
+      },
+      {
+        "name": "肉片码在黄瓜上",
+        "step": 4
+      },
+      {
+        "name": "蒜剁成泥加生抽醋辣椒油糖花椒粉调汁",
+        "step": 5
+      },
+      {
+        "name": "淋在肉上撒葱花",
+        "step": 6
+      }
+    ],
+    "attentions": [
+      {
+        "name": "蒜泥是灵魂一定要多"
+      },
+      {
+        "name": "肉要放凉再切才薄而不散"
+      },
+      {
+        "name": "夏天吃非常爽口"
+      }
+    ],
+    "prep_steps": [
+      {
+        "act": "洗",
+        "note": "五花肉整块洗",
+        "items": [
+          {
+            "name": "五花肉"
+          },
+          {
+            "name": "黄瓜"
+          }
+        ]
+      },
+      {
+        "act": "切",
+        "items": [
+          {
+            "name": "五花肉",
+            "shape": "薄片"
+          },
+          {
+            "name": "黄瓜",
+            "shape": "丝"
+          },
+          {
+            "name": "蒜",
+            "shape": "泥"
+          },
+          {
+            "name": "葱",
+            "shape": "葱花"
+          },
+          {
+            "name": "姜",
+            "shape": "片"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "丝瓜炒肉",
+    "dtype": "硬菜",
+    "ftype": "草",
+    "start_month": 6,
+    "end_month": 9,
+    "cooking_time": 10,
+    "difficulty": "简单",
+    "health_score": 78,
+    "main_ingredients": [
+      {
+        "name": "丝瓜",
+        "amount": "2根"
+      },
+      {
+        "name": "猪肉",
+        "amount": "150g"
+      }
+    ],
+    "side_ingredients": [
+      {
+        "name": "蒜",
+        "amount": "3瓣"
+      },
+      {
+        "name": "姜",
+        "amount": "2片"
+      }
+    ],
+    "seasonings": [
+      {
+        "name": "生抽",
+        "amount": "1勺"
+      },
+      {
+        "name": "料酒",
+        "amount": "1勺"
+      },
+      {
+        "name": "淀粉",
+        "amount": "1勺"
+      },
+      {
+        "name": "盐",
+        "amount": "适量"
+      }
+    ],
+    "cooking_steps": [
+      {
+        "name": "猪肉切片加料酒淀粉生抽腌10分钟",
+        "step": 1
+      },
+      {
+        "name": "丝瓜去皮切滚刀块",
+        "step": 2
+      },
+      {
+        "name": "油热下肉片滑炒变色盛出",
+        "step": 3
+      },
+      {
+        "name": "下姜蒜爆香",
+        "step": 4
+      },
+      {
+        "name": "下丝瓜翻炒加少许水焖2分钟",
+        "step": 5
+      },
+      {
+        "name": "倒回肉片加盐翻匀",
+        "step": 6
+      }
+    ],
+    "attentions": [
+      {
+        "name": "丝瓜出水后自然有汤汁很鲜"
+      },
+      {
+        "name": "铁锅会变黑用不粘锅"
+      }
+    ],
+    "prep_steps": [
+      {
+        "act": "腌",
+        "note": "料酒淀粉生抽",
+        "items": [
+          {
+            "name": "猪肉",
+            "amount": "150g"
+          }
+        ],
+        "time_minutes": 10
+      },
+      {
+        "act": "切",
+        "items": [
+          {
+            "name": "丝瓜",
+            "shape": "滚刀块"
+          },
+          {
+            "name": "猪肉",
+            "shape": "片"
+          },
+          {
+            "name": "蒜",
+            "shape": "末"
+          },
+          {
+            "name": "姜",
+            "shape": "片"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "丝瓜豆腐汤",
+    "dtype": "素汤",
+    "ftype": "草",
+    "start_month": 6,
+    "end_month": 9,
+    "cooking_time": 10,
+    "difficulty": "简单",
+    "health_score": 92,
+    "main_ingredients": [
+      {
+        "name": "丝瓜",
+        "amount": "1根"
+      },
+      {
+        "name": "嫩豆腐",
+        "amount": "1块"
+      }
+    ],
+    "side_ingredients": [
+      {
+        "name": "姜",
+        "amount": "2片"
+      },
+      {
+        "name": "虾皮",
+        "amount": "1把"
+      }
+    ],
+    "seasonings": [
+      {
+        "name": "盐",
+        "amount": "适量"
+      },
+      {
+        "name": "香油",
+        "amount": "几滴"
+      }
+    ],
+    "cooking_steps": [
+      {
+        "name": "丝瓜去皮切块豆腐切块",
+        "step": 1
+      },
+      {
+        "name": "油热下姜片丝瓜略炒",
+        "step": 2
+      },
+      {
+        "name": "加开水下豆腐煮3分钟",
+        "step": 3
+      },
+      {
+        "name": "加虾皮盐香油",
+        "step": 4
+      }
+    ],
+    "attentions": [
+      {
+        "name": "丝瓜先炒一下汤更鲜"
+      },
+      {
+        "name": "虾皮代替味精"
+      }
+    ],
+    "prep_steps": [
+      {
+        "act": "切",
+        "items": [
+          {
+            "name": "丝瓜",
+            "shape": "块"
+          },
+          {
+            "name": "嫩豆腐",
+            "shape": "块"
+          },
+          {
+            "name": "姜",
+            "shape": "片"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "莲藕排骨汤",
+    "dtype": "肉汤",
+    "ftype": "跑",
+    "start_month": 9,
+    "end_month": 2,
+    "cooking_time": 100,
+    "difficulty": "简单",
+    "health_score": 85,
+    "main_ingredients": [
+      {
+        "name": "排骨",
+        "amount": "500g"
+      },
+      {
+        "name": "莲藕",
+        "amount": "2节"
+      }
+    ],
+    "side_ingredients": [
+      {
+        "name": "姜",
+        "amount": "5片"
+      },
+      {
+        "name": "葱",
+        "amount": "2根"
+      },
+      {
+        "name": "枸杞",
+        "amount": "10粒"
+      }
+    ],
+    "seasonings": [
+      {
+        "name": "盐",
+        "amount": "适量"
+      },
+      {
+        "name": "料酒",
+        "amount": "2勺"
+      }
+    ],
+    "cooking_steps": [
+      {
+        "name": "排骨冷水焯水",
+        "step": 1
+      },
+      {
+        "name": "莲藕去皮切滚刀块",
+        "step": 2
+      },
+      {
+        "name": "排骨姜片入锅加水大火烧开",
+        "step": 3
+      },
+      {
+        "name": "转小火煲1小时",
+        "step": 4
+      },
+      {
+        "name": "下莲藕再煲30分钟",
+        "step": 5
+      },
+      {
+        "name": "加盐撒枸杞葱花",
+        "step": 6
+      }
+    ],
+    "attentions": [
+      {
+        "name": "藕选粉藕炖汤才粉糯"
+      },
+      {
+        "name": "藕不要切太早会氧化变黑"
+      }
+    ],
+    "prep_steps": [
+      {
+        "act": "洗",
+        "note": "排骨浸泡去血水",
+        "items": [
+          {
+            "name": "排骨"
+          },
+          {
+            "name": "莲藕"
+          }
+        ]
+      },
+      {
+        "act": "切",
+        "items": [
+          {
+            "name": "排骨",
+            "shape": "段"
+          },
+          {
+            "name": "莲藕",
+            "shape": "滚刀块"
+          },
+          {
+            "name": "姜",
+            "shape": "片"
+          },
+          {
+            "name": "葱",
+            "shape": "葱花"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "清炒藕片",
+    "dtype": "素菜",
+    "ftype": "草",
+    "start_month": 9,
+    "end_month": 2,
+    "cooking_time": 8,
+    "difficulty": "简单",
+    "health_score": 88,
+    "main_ingredients": [
+      {
+        "name": "莲藕",
+        "amount": "2节"
+      }
+    ],
+    "side_ingredients": [
+      {
+        "name": "蒜",
+        "amount": "3瓣"
+      },
+      {
+        "name": "葱",
+        "amount": "1根"
+      }
+    ],
+    "seasonings": [
+      {
+        "name": "盐",
+        "amount": "适量"
+      },
+      {
+        "name": "白醋",
+        "amount": "半勺"
+      }
+    ],
+    "cooking_steps": [
+      {
+        "name": "莲藕去皮切薄片泡水防氧化",
+        "step": 1
+      },
+      {
+        "name": "水开加白醋焯藕片30秒",
+        "step": 2
+      },
+      {
+        "name": "油热下蒜末爆香",
+        "step": 3
+      },
+      {
+        "name": "下藕片大火快炒1分钟",
+        "step": 4
+      },
+      {
+        "name": "加盐翻匀撒葱花",
+        "step": 5
+      }
+    ],
+    "attentions": [
+      {
+        "name": "泡水和加醋保持藕片洁白"
+      },
+      {
+        "name": "炒的时间要短保持脆爽"
+      }
+    ],
+    "prep_steps": [
+      {
+        "act": "洗",
+        "note": "",
+        "items": [
+          {
+            "name": "莲藕"
+          }
+        ]
+      },
+      {
+        "act": "切",
+        "items": [
+          {
+            "name": "莲藕",
+            "shape": "薄片"
+          },
+          {
+            "name": "蒜",
+            "shape": "末"
+          },
+          {
+            "name": "葱",
+            "shape": "葱花"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "凉拌藕片",
+    "dtype": "素菜",
+    "ftype": "草",
+    "start_month": 6,
+    "end_month": 10,
+    "cooking_time": 8,
+    "difficulty": "简单",
+    "health_score": 90,
+    "main_ingredients": [
+      {
+        "name": "莲藕",
+        "amount": "2节"
+      }
+    ],
+    "side_ingredients": [
+      {
+        "name": "蒜",
+        "amount": "5瓣"
+      },
+      {
+        "name": "小米辣",
+        "amount": "3个"
+      },
+      {
+        "name": "香菜",
+        "amount": "2根"
+      }
+    ],
+    "seasonings": [
+      {
+        "name": "生抽",
+        "amount": "2勺"
+      },
+      {
+        "name": "醋",
+        "amount": "2勺"
+      },
+      {
+        "name": "盐",
+        "amount": "适量"
+      },
+      {
+        "name": "糖",
+        "amount": "1勺"
+      },
+      {
+        "name": "辣椒油",
+        "amount": "1勺"
+      },
+      {
+        "name": "香油",
+        "amount": "1勺"
+      }
+    ],
+    "cooking_steps": [
+      {
+        "name": "莲藕去皮切薄片",
+        "step": 1
+      },
+      {
+        "name": "水开焯藕片1分钟捞出过凉水",
+        "step": 2
+      },
+      {
+        "name": "蒜末小米辣圈加生抽醋盐糖辣椒油香油调汁",
+        "step": 3
+      },
+      {
+        "name": "藕片和酱汁拌匀",
+        "step": 4
+      },
+      {
+        "name": "撒香菜上桌",
+        "step": 5
+      }
+    ],
+    "attentions": [
+      {
+        "name": "焯水后过凉水更脆"
+      },
+      {
+        "name": "现拌现吃"
+      }
+    ],
+    "prep_steps": [
+      {
+        "act": "切",
+        "items": [
+          {
+            "name": "莲藕",
+            "shape": "薄片"
+          },
+          {
+            "name": "蒜",
+            "shape": "末"
+          },
+          {
+            "name": "小米辣",
+            "shape": "圈"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "白灼秋葵",
+    "dtype": "素菜",
+    "ftype": "草",
+    "start_month": 6,
+    "end_month": 9,
+    "cooking_time": 5,
+    "difficulty": "简单",
+    "health_score": 93,
+    "main_ingredients": [
+      {
+        "name": "秋葵",
+        "amount": "300g"
+      },
+      {
+        "name": "蒜",
+        "amount": "5瓣"
+      }
+    ],
+    "side_ingredients": [
+      {
+        "name": "小米辣",
+        "amount": "2个"
+      }
+    ],
+    "seasonings": [
+      {
+        "name": "生抽",
+        "amount": "2勺"
+      },
+      {
+        "name": "蚝油",
+        "amount": "1勺"
+      },
+      {
+        "name": "糖",
+        "amount": "半勺"
+      },
+      {
+        "name": "盐",
+        "amount": "少许"
+      }
+    ],
+    "cooking_steps": [
+      {
+        "name": "秋葵洗净不去蒂",
+        "step": 1
+      },
+      {
+        "name": "水开加盐油焯秋葵2分钟",
+        "step": 2
+      },
+      {
+        "name": "捞出过凉水切去蒂部",
+        "step": 3
+      },
+      {
+        "name": "蒜末加生抽蚝油糖调成蘸汁",
+        "step": 4
+      },
+      {
+        "name": "摆盘上桌",
+        "step": 5
+      }
+    ],
+    "attentions": [
+      {
+        "name": "整根焯水再切不易流失粘液"
+      },
+      {
+        "name": "秋葵粘液是营养所在"
+      }
+    ],
+    "prep_steps": [
+      {
+        "act": "洗",
+        "note": "用盐搓去绒毛",
+        "items": [
+          {
+            "name": "秋葵"
+          }
+        ]
+      },
+      {
+        "act": "切",
+        "items": [
+          {
+            "name": "蒜",
+            "shape": "末"
+          },
+          {
+            "name": "小米辣",
+            "shape": "圈"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "秋葵炒蛋",
+    "dtype": "素菜",
+    "ftype": "草",
+    "start_month": 6,
+    "end_month": 9,
+    "cooking_time": 8,
+    "difficulty": "简单",
+    "health_score": 90,
+    "main_ingredients": [
+      {
+        "name": "秋葵",
+        "amount": "200g"
+      },
+      {
+        "name": "鸡蛋",
+        "amount": "3个"
+      }
+    ],
+    "side_ingredients": [
+      {
+        "name": "蒜",
+        "amount": "2瓣"
+      }
+    ],
+    "seasonings": [
+      {
+        "name": "盐",
+        "amount": "适量"
+      }
+    ],
+    "cooking_steps": [
+      {
+        "name": "秋葵焯水后切片",
+        "step": 1
+      },
+      {
+        "name": "鸡蛋打散加盐炒熟盛出",
+        "step": 2
+      },
+      {
+        "name": "蒜末爆香下秋葵翻炒",
+        "step": 3
+      },
+      {
+        "name": "倒回鸡蛋翻匀",
+        "step": 4
+      }
+    ],
+    "attentions": [
+      {
+        "name": "秋葵先焯水再切粘液不会流失"
+      },
+      {
+        "name": "大火快炒"
+      }
+    ],
+    "prep_steps": [
+      {
+        "act": "洗",
+        "note": "搓去绒毛",
+        "items": [
+          {
+            "name": "秋葵"
+          }
+        ]
+      },
+      {
+        "act": "切",
+        "items": [
+          {
+            "name": "秋葵",
+            "shape": "片"
+          },
+          {
+            "name": "蒜",
+            "shape": "末"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "蒜蓉秋葵",
+    "dtype": "素菜",
+    "ftype": "草",
+    "start_month": 6,
+    "end_month": 9,
+    "cooking_time": 8,
+    "difficulty": "简单",
+    "health_score": 92,
+    "main_ingredients": [
+      {
+        "name": "秋葵",
+        "amount": "300g"
+      },
+      {
+        "name": "蒜",
+        "amount": "1整头"
+      }
+    ],
+    "side_ingredients": [
+      {
+        "name": "红椒",
+        "amount": "半个"
+      }
+    ],
+    "seasonings": [
+      {
+        "name": "生抽",
+        "amount": "2勺"
+      },
+      {
+        "name": "蚝油",
+        "amount": "1勺"
+      },
+      {
+        "name": "盐",
+        "amount": "少许"
+      },
+      {
+        "name": "淀粉",
+        "amount": "少许"
+      }
+    ],
+    "cooking_steps": [
+      {
+        "name": "秋葵洗净焯水2分钟摆盘",
+        "step": 1
+      },
+      {
+        "name": "蒜剁成末红椒切粒",
+        "step": 2
+      },
+      {
+        "name": "油热下一半蒜末炸至金黄",
+        "step": 3
+      },
+      {
+        "name": "加另一半生蒜生抽蚝油盐淀粉水煮至浓稠",
+        "step": 4
+      },
+      {
+        "name": "淋在秋葵上撒红椒粒",
+        "step": 5
+      }
+    ],
+    "attentions": [
+      {
+        "name": "金银蒜：一半炸一半生，风味层次丰富"
+      },
+      {
+        "name": "秋葵整根焯保持营养"
+      }
+    ],
+    "prep_steps": [
+      {
+        "act": "洗",
+        "note": "盐搓去绒毛",
+        "items": [
+          {
+            "name": "秋葵"
+          }
+        ]
+      },
+      {
+        "act": "切",
+        "items": [
+          {
+            "name": "蒜",
+            "shape": "末"
+          },
+          {
+            "name": "红椒",
+            "shape": "粒"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "虾仁冬瓜",
+    "dtype": "硬菜",
+    "ftype": "游",
+    "start_month": 6,
+    "end_month": 9,
+    "cooking_time": 12,
+    "difficulty": "简单",
+    "health_score": 88,
+    "main_ingredients": [
+      {
+        "name": "冬瓜",
+        "amount": "500g"
+      },
+      {
+        "name": "虾仁",
+        "amount": "200g"
+      }
+    ],
+    "side_ingredients": [
+      {
+        "name": "姜",
+        "amount": "3片"
+      },
+      {
+        "name": "葱",
+        "amount": "1根"
+      },
+      {
+        "name": "蒜",
+        "amount": "2瓣"
+      }
+    ],
+    "seasonings": [
+      {
+        "name": "盐",
+        "amount": "适量"
+      },
+      {
+        "name": "料酒",
+        "amount": "1勺"
+      },
+      {
+        "name": "淀粉",
+        "amount": "1勺"
+      },
+      {
+        "name": "白胡椒粉",
+        "amount": "少许"
+      },
+      {
+        "name": "香油",
+        "amount": "几滴"
+      }
+    ],
+    "cooking_steps": [
+      {
+        "name": "虾仁加料酒淀粉白胡椒粉腌10分钟",
+        "step": 1
+      },
+      {
+        "name": "冬瓜去皮切块",
+        "step": 2
+      },
+      {
+        "name": "油热下姜蒜爆香下虾仁滑炒变色盛出",
+        "step": 3
+      },
+      {
+        "name": "下冬瓜翻炒加少许水焖5分钟",
+        "step": 4
+      },
+      {
+        "name": "倒回虾仁加盐翻匀淋香油撒葱花",
+        "step": 5
+      }
+    ],
+    "attentions": [
+      {
+        "name": "冬瓜焖软后自然出水"
+      },
+      {
+        "name": "虾仁不要炒太久保持Q弹"
+      }
+    ],
+    "prep_steps": [
+      {
+        "act": "腌",
+        "note": "料酒淀粉白胡椒粉",
+        "items": [
+          {
+            "name": "虾仁",
+            "amount": "200g"
+          }
+        ],
+        "time_minutes": 10
+      },
+      {
+        "act": "切",
+        "items": [
+          {
+            "name": "冬瓜",
+            "shape": "块"
+          },
+          {
+            "name": "姜",
+            "shape": "片"
+          },
+          {
+            "name": "蒜",
+            "shape": "末"
+          },
+          {
+            "name": "葱",
+            "shape": "葱花"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "腐乳空心菜",
+    "dtype": "素菜",
+    "ftype": "草",
+    "start_month": 5,
+    "end_month": 9,
+    "cooking_time": 5,
+    "difficulty": "简单",
+    "health_score": 85,
+    "main_ingredients": [
+      {
+        "name": "空心菜",
+        "amount": "1把"
+      },
+      {
+        "name": "腐乳",
+        "amount": "2块"
+      },
+      {
+        "name": "蒜",
+        "amount": "5瓣"
+      }
+    ],
+    "side_ingredients": [],
+    "seasonings": [
+      {
+        "name": "盐",
+        "amount": "少许"
+      }
+    ],
+    "cooking_steps": [
+      {
+        "name": "腐乳压碎加少许水调成汁",
+        "step": 1
+      },
+      {
+        "name": "蒜切末",
+        "step": 2
+      },
+      {
+        "name": "油热下蒜末爆香",
+        "step": 3
+      },
+      {
+        "name": "大火下空心菜快炒1分钟",
+        "step": 4
+      },
+      {
+        "name": "淋腐乳汁翻匀",
+        "step": 5
+      }
+    ],
+    "attentions": [
+      {
+        "name": "腐乳本身有咸味盐要少放"
+      },
+      {
+        "name": "大火快炒才翠绿"
+      }
+    ],
+    "prep_steps": [
+      {
+        "act": "洗",
+        "note": "摘去老茎洗净",
+        "items": [
+          {
+            "name": "空心菜"
+          }
+        ]
+      },
+      {
+        "act": "切",
+        "items": [
+          {
+            "name": "蒜",
+            "shape": "末"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "凉拌毛豆",
+    "dtype": "素菜",
+    "ftype": "草",
+    "start_month": 6,
+    "end_month": 9,
+    "cooking_time": 12,
+    "difficulty": "简单",
+    "health_score": 85,
+    "main_ingredients": [
+      {
+        "name": "毛豆",
+        "amount": "500g"
+      }
+    ],
+    "side_ingredients": [
+      {
+        "name": "蒜",
+        "amount": "5瓣"
+      },
+      {
+        "name": "干辣椒",
+        "amount": "5个"
+      },
+      {
+        "name": "花椒",
+        "amount": "1把"
+      },
+      {
+        "name": "八角",
+        "amount": "2个"
+      }
+    ],
+    "seasonings": [
+      {
+        "name": "生抽",
+        "amount": "2勺"
+      },
+      {
+        "name": "醋",
+        "amount": "2勺"
+      },
+      {
+        "name": "盐",
+        "amount": "适量"
+      },
+      {
+        "name": "糖",
+        "amount": "1勺"
+      },
+      {
+        "name": "香油",
+        "amount": "1勺"
+      }
+    ],
+    "cooking_steps": [
+      {
+        "name": "毛豆剪去两端洗净",
+        "step": 1
+      },
+      {
+        "name": "水开加盐八角煮毛豆5分钟",
+        "step": 2
+      },
+      {
+        "name": "捞出过凉水",
+        "step": 3
+      },
+      {
+        "name": "油热下花椒干辣椒蒜末爆香",
+        "step": 4
+      },
+      {
+        "name": "加生抽醋糖盐香油调汁",
+        "step": 5
+      },
+      {
+        "name": "毛豆和酱汁拌匀冷藏半小时",
+        "step": 6
+      }
+    ],
+    "attentions": [
+      {
+        "name": "剪两端更入味"
+      },
+      {
+        "name": "冷藏后更好吃"
+      },
+      {
+        "name": "夏天配啤酒绝了"
+      }
+    ],
+    "prep_steps": [
+      {
+        "act": "洗",
+        "note": "剪去两端",
+        "items": [
+          {
+            "name": "毛豆"
+          }
+        ]
+      },
+      {
+        "act": "切",
+        "items": [
           {
             "name": "蒜",
             "shape": "末"
