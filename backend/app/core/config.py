@@ -23,7 +23,7 @@ class Settings(BaseSettings):
     def DATABASE_URL(self) -> str:
         if os.environ.get("DATABASE_URL"):
             url = os.environ["DATABASE_URL"]
-            return url.replace("postgres://", "postgresql+asyncpg://")
+            return url.replace("postgresql://", "postgresql+asyncpg://").replace("postgres://", "postgresql+asyncpg://")
         return (
             f"postgresql+asyncpg://{self.PG_USER}:{self.PG_PASSWORD}"
             f"@{self.PG_HOST}:{self.PG_PORT}/{self.PG_DATABASE}"
