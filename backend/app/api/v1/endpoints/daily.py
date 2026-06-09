@@ -43,6 +43,14 @@ async def generate_recommend(
 
     service = RecommendService(db)
     recommend = await service.generate_daily_menu(target_date)
+
+    # 发送通知
+    try:
+        from ....services.notification import send_notification
+        await send_notification(recommend)
+    except Exception:
+        pass
+
     return BaseResponse(data=recommend, detail="推荐生成成功")
 
 

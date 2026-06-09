@@ -72,22 +72,45 @@ class RecommendService:
             soup_dishes = [d for d in soup_dishes if contains_any(d)]
 
         # 选择菜品
+        import random as _random
         recommended = []
         used_ids = set()
+        prefer_healthy = pref.prefer_healthy
 
-        def pick(candidates: list, count: int):
-            picked = []
-            for c in candidates:
-                if len(picked) >= count:
-                    break
-                if c.id not in used_ids:
-                    picked.append(c)
-                    used_ids.add(c.id)
+        def pick_weighted(candidates: list, count: int):
+            """选菜：健康模式用加权随机，否则按 eats 升序取"""
+            available = [c for c in candidates if c.id not in used_ids]
+            if not available:
+                return []
+            if count >= len(available):
+                picked = list(available)
+            elif prefer_healthy:
+                # 加权随机：健康分高 + 吃得少 = 权重高
+                weights = []
+                for c in available:
+                    w = c.health_score + (100 - min(c.eats, 50) * 2)  # eats 低加分
+                    weights.append(max(w, 1))
+                picked = _random.sample(available, k=count, counts=weights) \
+                    if hasattr(_random, 'sample') else _random.choices(available, weights=weights, k=count)
+                # dedup choices
+                seen = set()
+                picked = []
+                for c in _random.choices(available, weights=weights, k=count * 2):
+                    if c.id not in seen:
+                        picked.append(c)
+                        seen.add(c.id)
+                    if len(picked) >= count:
+                        break
+            else:
+                picked = available[:count]
+
+            for c in picked:
+                used_ids.add(c.id)
             return picked
 
-        recommended.extend(pick(hard_dishes, meat_count))
-        recommended.extend(pick(veg_dishes, vegetable_count))
-        recommended.extend(pick(soup_dishes, soup_count))
+        recommended.extend(pick_weighted(hard_dishes, meat_count))
+        recommended.extend(pick_weighted(veg_dishes, vegetable_count))
+        recommended.extend(pick_weighted(soup_dishes, soup_count))
 
         total_needed = meat_count + vegetable_count + soup_count
 

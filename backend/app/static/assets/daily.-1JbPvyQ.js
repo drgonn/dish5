@@ -1,0 +1,1 @@
+import{r as a}from"./_plugin-vue_export-helper.Cqm0Nemg.js";const e={today:()=>a("/daily/today"),getDate:e=>a(`/daily/${e}`),generate:e=>a("/daily/generate",{method:"POST",params:e?{target_date:e}:{}}),history:(e=1,t=20)=>a("/daily/history/list",{params:{page:e,page_size:t}})};export{e as d};

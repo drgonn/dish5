@@ -47,6 +47,12 @@ function dec(field) {
         </view>
       </view>
 
+      <view class="row">
+        <text class="label">💚 健康优先</text>
+        <switch :checked="store.preferences.prefer_healthy" @change="e => store.preferences.prefer_healthy = e.detail.value" color="#4CAF50" />
+      </view>
+      <view class="hint">开启后，健康分高的菜被选中的概率更大</view>
+
       <button class="save-btn" @tap="store.save()">💾 保存偏好</button>
     </view>
 
@@ -78,6 +84,7 @@ function dec(field) {
 .stepper { display: flex; align-items: center; gap: 20rpx; }
 .step-btn { width: 56rpx; height: 56rpx; border-radius: 50%; border: 2rpx solid #FF6B35; background: #fff; color: #FF6B35; font-size: 32rpx; text-align: center; line-height: 52rpx; padding: 0; }
 .step-val { font-size: 36rpx; font-weight: bold; min-width: 50rpx; text-align: center; }
+.hint { font-size: 22rpx; color: #999; padding: 0 0 16rpx 0; }
 .save-btn { background: #FF6B35; color: #fff; border: none; border-radius: 100rpx; padding: 20rpx; margin-top: 30rpx; font-size: 30rpx; }
 .link { display: flex; justify-content: space-between; align-items: center; padding: 22rpx 0; border-bottom: 1rpx solid #f5f5f5; font-size: 28rpx; }
 .link:last-child { border-bottom: none; }

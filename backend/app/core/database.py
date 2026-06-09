@@ -1,9 +1,12 @@
 # 数据库连接配置 — dish5
 # 异步 PostgreSQL，配合 Alembic 迁移
+import logging
 from sqlalchemy.ext.asyncio import AsyncSession, create_async_engine, async_sessionmaker
 from sqlalchemy.orm import DeclarativeBase
 
 from .config import settings
+
+logger = logging.getLogger("dish5.database")
 
 engine = create_async_engine(
     settings.DATABASE_URL,
@@ -58,7 +61,7 @@ async def run_migrations_or_init():
         alembic_cfg.set_main_option("sqlalchemy.url", settings.DATABASE_URL)
         command.upgrade(alembic_cfg, "head")
     except Exception as e:
-        print(f"[dish5] Alembic 迁移失败 ({e})，回退到 create_all", flush=True)
+        logger.warning(f"Alembic 迁移失败 ({e})，回退到 create_all")
         async with engine.begin() as conn:
             await conn.run_sync(Base.metadata.create_all)
     finally:

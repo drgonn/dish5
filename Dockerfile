@@ -1,4 +1,4 @@
-# dish5 — 多阶段构建
+# dish5 — Render 部署用多阶段构建
 # Stage 1: 构建前端
 FROM node:20-alpine AS frontend
 WORKDIR /frontend
@@ -11,11 +11,11 @@ RUN npm run build
 FROM python:3.12-slim
 WORKDIR /home/dron/projects/dish/dish5/backend
 
-COPY requirements.txt .
+COPY backend/requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY app/ ./app/
-COPY alembic.ini alembic/
+COPY backend/app/ ./app/
+COPY backend/alembic.ini backend/alembic/ ./
 COPY --from=frontend /frontend/dist/build/h5/ ./app/static/
 
 EXPOSE 8000

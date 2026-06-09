@@ -21,10 +21,27 @@ async def send_notification(recommend: DailyRecommend):
 
     # 格式化消息
     recipes = recommend.recipes or []
-    lines = [f"【每日推荐】{recommend.date}"]
+    shopping = recommend.shopping_list or []
+
+    lines = [f"🍳 今日推荐 · {recommend.date}"]
+    lines.append("")
+    lines.append("📋 今日菜单：")
     for i, r in enumerate(recipes):
         emoji = ["🥩", "🥬", "🥬", "🍲"][i] if i < 4 else "🍳"
-        lines.append(f"{emoji} {r.get('name', '?')}（{r.get('dtype', '')}）")
+        lines.append(f"  {emoji} {r.get('name', '?')}（{r.get('dtype', '')}）")
+
+    if shopping:
+        # 取前 10 个食材
+        top_items = [s for s in shopping if s.get('type') in ('main', 'side')][:10]
+        if top_items:
+            lines.append("")
+            lines.append("🛒 要买的菜：")
+            for item in top_items:
+                amt = f" {item.get('amount', '')}" if item.get('amount') else ""
+                lines.append(f"  · {item['name']}{amt}")
+
+    lines.append("")
+    lines.append("📱 打开 dish5 查看完整备菜清单和步骤")
 
     message = {
         "msgtype": "text",

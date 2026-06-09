@@ -54,6 +54,7 @@ class Dish(Base):
 
     # 推荐计数 — 来自 dish3
     eats = Column(Integer, default=0, comment="被推荐次数")
+    health_score = Column(Integer, default=50, comment="健康分值(0-100)，越高越健康")
 
     # JSON 字段 — 来自 dish_online，重命名更清晰
     # [{"name": "五花肉", "amount": "500g"}, ...]
