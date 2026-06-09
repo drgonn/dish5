@@ -45,10 +45,12 @@ async def get_db() -> AsyncSession:
 
 async def run_migrations_or_init():
     """启动时运行 Alembic 迁移，失败则回退到 create_all"""
-    # 保存 logging 状态，alembic command.upgrade() 会覆盖它
+    # 保存所有 logger 状态，alembic.fileConfig() 会禁掉现有 logger
     import logging
-    root_handlers = logging.root.handlers.copy()
-    root_level = logging.root.level
+    saved = {}
+    for name in ["dish5", "uvicorn", "uvicorn.access", "uvicorn.error", "sqlalchemy"]:
+        lg = logging.getLogger(name)
+        saved[name] = (lg.level, lg.handlers.copy(), lg.disabled)
 
     try:
         from alembic.config import Config
@@ -65,6 +67,9 @@ async def run_migrations_or_init():
         async with engine.begin() as conn:
             await conn.run_sync(Base.metadata.create_all)
     finally:
-        # 恢复 logging 状态，alembic 把它搞坏了
-        logging.root.handlers = root_handlers
-        logging.root.level = root_level
+        # 恢复所有被 fileConfig 禁掉的 logger
+        for name, (level, handlers, disabled) in saved.items():
+            lg = logging.getLogger(name)
+            lg.level = level
+            lg.handlers = handlers
+            lg.disabled = disabled

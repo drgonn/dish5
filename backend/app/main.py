@@ -11,7 +11,11 @@ from .core.database import run_migrations_or_init
 from .api.v1.router import api_router
 from .tasks import start_scheduler, stop_scheduler
 
+import sys
 logger = logging.getLogger("dish5")
+logger.setLevel(logging.INFO)
+logger.addHandler(logging.StreamHandler(sys.stdout))
+logger.propagate = False
 
 
 @asynccontextmanager
@@ -53,7 +57,6 @@ async def log_requests(request: Request, call_next):
 app.include_router(api_router, prefix="/api/v1")
 from .admin import admin_router
 app.include_router(admin_router)
-
 
 # 生产环境：serve 前端静态文件 + SPA fallback
 STATIC_DIR = os.path.join(os.path.dirname(__file__), "static")
