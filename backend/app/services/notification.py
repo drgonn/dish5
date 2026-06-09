@@ -41,7 +41,7 @@ async def send_notification(recommend: DailyRecommend):
                 lines.append(f"  · {item['name']}{amt}")
 
     lines.append("")
-    lines.append("📱 打开 dish5 查看完整备菜清单和步骤")
+    lines.append("📱 查看完整清单：https://dish5.onrender.com")
 
     message = {
         "msgtype": "text",
