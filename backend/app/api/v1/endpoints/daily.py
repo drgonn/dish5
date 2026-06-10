@@ -12,6 +12,15 @@ from ....services.recommend import RecommendService
 router = APIRouter()
 
 
+async def _notify_async(recommend):
+    """后台发送通知，独立 db session"""
+    try:
+        from ....services.notification import send_notification
+        await send_notification(recommend)
+    except Exception:
+        pass
+
+
 @router.get("/today", response_model=BaseResponse[DailyResponse])
 async def get_today_recommend(db: AsyncSession = Depends(get_db)):
     """获取今日推荐"""
@@ -34,6 +43,7 @@ async def get_date_recommend(
 
 
 @router.post("/generate", response_model=BaseResponse[DailyResponse])
+@router.get("/generate", response_model=BaseResponse[DailyResponse])
 async def generate_recommend(
     target_date: date = None, db: AsyncSession = Depends(get_db)
 ):
@@ -44,12 +54,9 @@ async def generate_recommend(
     service = RecommendService(db)
     recommend = await service.generate_daily_menu(target_date)
 
-    # 发送通知
-    try:
-        from ....services.notification import send_notification
-        await send_notification(recommend)
-    except Exception:
-        pass
+    # 后台发送通知，不阻塞响应
+    import asyncio
+    asyncio.create_task(_notify_async(recommend))
 
     return BaseResponse(data=recommend, detail="推荐生成成功")
 
