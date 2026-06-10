@@ -43,7 +43,7 @@ async def get_date_recommend(
 
 
 @router.post("/generate", response_model=BaseResponse[DailyResponse])
-@router.get("/generate", response_model=BaseResponse[DailyResponse])
+# @router.get("/generate", response_model=BaseResponse[DailyResponse])
 async def generate_recommend(
     target_date: date = None, db: AsyncSession = Depends(get_db)
 ):
